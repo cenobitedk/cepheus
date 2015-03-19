@@ -11,15 +11,18 @@ html {
 
 body {
   background-color: black;
-  background-image: url(../img/bg_stars1.jpg);
-  background-repeat: no-repeat;
-  background-position: 0 0;
   text-align: center;
   color: white;
   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
   margin: 0;
   padding: 0;
   height: 100%;
+}
+
+body.desktop {
+  background-image: url(../img/bg_stars1.jpg);
+  background-repeat: no-repeat;
+  background-position: 0 0;
 }
 
 a {
@@ -36,6 +39,7 @@ a:hover {
   position: fixed;
   width: 100%;
   height: 100%;
+  overflow: hidden;
 }
 .overlay iframe,
 .overlay .shield {
@@ -51,7 +55,7 @@ a:hover {
   opacity: 0.15;
 }
 
-.wrapper {
+.desktop .wrapper {
   display: table;
   height: 100%;
   width: 100%;
@@ -65,7 +69,6 @@ a:hover {
 .header,
 .body,
 .footer {
-  display: table-row;
   text-align: center;
   min-height: 100px;
   -webkit-animation: fade-in 2s ease 1s 1;
@@ -77,11 +80,23 @@ a:hover {
   -ms-animation-fill-mode: both;
   animation-fill-mode: both;
 }
-.header {
+.desktop .header {
   height: 150px;
 }
 .footer {
   height: 70px;
+}
+.desktop .header,
+.desktop .body,
+.desktop .footer {
+  display: table-row;
+}
+.mobile .body {
+  min-height: 120px;
+}
+
+.mobile .wrapper > div {
+  margin-bottom: 2em;
 }
 
 h1 {
@@ -95,12 +110,25 @@ h1 {
   background-position: center 70%;
 }
 
+.mobile h1 {
+  padding-top: 30px;
+}
+
+@media (max-width: 299px) {
+  h1 {
+    background-size: 98%;
+  }
+}
+
+
 .lead {
+  font-size: 15px;
   font-weight: 100;
   color: #15b565;
   letter-spacing: 0.5px;
   position: relative;
   display: inline-block;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.8), 0 0 10px rgba(30, 170, 100, 1), 0 0 20px rgba(30, 170, 100, 1);
 }
 .lead:before,
 .lead:after {
@@ -112,6 +140,7 @@ h1 {
   display: block;
   position: absolute;
   bottom: 45%;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.8), 0 0 10px rgba(30, 170, 100, 1), 0 0 20px rgba(30, 170, 100, 1);
 }
 .lead:before {
   right: 100%;
@@ -205,12 +234,60 @@ h1 {
   -ms-animation-fill-mode: both;
   animation-fill-mode: both;
 }
+.mobile .nav {
+  display: block;
+  border-radius: 0;
+  border-left: none;
+  border-right: none;
+}
 .nav ul {
   font-size: 0;
-  padding: 5px 10px;
+  padding: 5px 20px;
   display: block;
 }
-.nav ul:before,
+
+.mobile .nav ul {
+  display: inline-block;
+  vertical-align: top;
+  box-sizing: border-box;
+  padding: 5px 5px 5px 15px;
+}
+
+@media (min-width: 300px) {
+  .mobile .nav ul {
+    width: 55%;
+    max-width: 170px;
+    min-width: 150px;
+  }
+  .mobile .nav ul + ul {
+    width: 42%;
+    min-width: 100px;
+  }
+}
+
+@media (max-width: 299px) {
+  .mobile .nav ul {
+    width: 100%;
+    border: none;
+    padding-left: 10%;
+  }
+}
+
+.mobile .nav:after {
+  content: " ";
+  clear: both;
+  display: table;
+}
+.desktop .nav .upper {
+  border-bottom: 1px solid #0a442a;
+  border-color: rgba(30, 170, 100, 0.6);
+}
+@media (min-width: 300px) {
+  .mobile .nav .upper {
+    border-right: 1px solid #0a442a;
+    border-color: rgba(30, 170, 100, 0.6);  
+  }
+}
 .nav li a {
   font-size: 10px;
   line-height: 10px;
@@ -220,24 +297,14 @@ h1 {
   letter-spacing: -1px;
   color: #15b565;
 }
-.nav ul:before {
-  /*color: #0a440a;*/
-  display: block;
-  margin: 5px 0 2px;
-}
-.nav .upper {
-  border-bottom: 1px solid #0a442a;
-  border-color: rgba(30, 170, 100, 0.6);
-}
-/*.nav .upper:before {
-  content: "********** Releases **********";
-}
-.nav .lower:before {
-  content: "********** Connect **********";
-}*/
 .nav li {
-  display: inline-block;
   margin: 5px 0;
+}
+.desktop .nav li {
+  display: inline-block;
+}
+.mobile .nav li {
+  text-align: left;
 }
 
 .nav li:nth-child(4n+0) {
@@ -285,19 +352,17 @@ h1 {
 .nav li a {
   display: block;
   position: relative;
-/*  border-left: 2px solid #22cc22;
-  border-right: 2px solid #22cc22;*/
-/*  padding: 0 1em;
-  margin: 0 -1px;*/
   -webkit-transition: color 0.2s;
   -moz-transition: color 0.2s;
   -mz-transition: color 0.2s;
   transition: color 0.2s;
+  margin: 0 -9px;
 }
 
 .nav li a:before,
-.nav li:last-child a:after {
-  content: "\00A0\00B7\00A0";
+.nav li a:after {
+  content: "\00B7";
+  margin: 0 5px;
 }
 
 .nav li a:hover,
@@ -307,22 +372,8 @@ h1 {
 }
 
 .nav li a:focus {
-  text-shadow: 0 0 10px rgba(30, 170, 100, 0.8);
+  text-shadow: 0 0 10px rgba(30, 170, 100, 1);
 }
-
-
-/*.nav li a:focus:before {
-  content: " ";
-  display: block;
-  height: 0;
-  width: 0;
-  position: absolute;
-  left: 50%;
-  bottom: 100%;
-  margin-left: -8px;
-  border: 8px solid transparent;
-  border-bottom-color: white;
-}*/
 
 .copyright {
   font-size: 7pt;
