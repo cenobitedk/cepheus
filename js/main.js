@@ -29,3 +29,17 @@ function onPlayerStateChange(event) {
   }
   if (done) player.playVideo();
 }
+
+
+document.addEventListener('click', function(e) {
+  if (e.target.href === '#' && e.target.outerHTML.indexOf('data-src') > -1) {
+    console.log(e.target);
+  }
+});
+// var r = new XMLHttpRequest();
+// r.open("GET", "path/to/api", true);
+// r.onreadystatechange = function () {
+//   if (r.readyState != 4 || r.status != 200) return;
+//   alert("Success: " + r.responseText);
+// };
+// r.send("banana=yellow");

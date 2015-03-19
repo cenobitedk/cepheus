@@ -45,7 +45,7 @@ if ($detect->isMobile()) {
             <li><a href="#">Aeternus</a></li>
             <li><a href="#">Throttle Up EP</a></li>
             <li><a href="#">Flashbacks EP</a></li>
-            <li><a href="#">Escape Velocity</a></li>
+            <li><a href="#" data-src="escape-velocity.html">Escape Velocity</a></li>
             <li><a href="#">Fireburner EP</a></li>
           </ul>
           <ul class="lower">
