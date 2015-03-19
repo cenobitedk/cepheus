@@ -19,11 +19,11 @@ body {
   height: 100%;
 }
 
-body.desktop {
+/*body.desktop {
   background-image: url(../img/bg_stars1.jpg);
   background-repeat: no-repeat;
   background-position: 0 0;
-}
+}*/
 
 a {
   color: white;
