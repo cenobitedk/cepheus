@@ -42,18 +42,20 @@ if ($detect->isMobile()) {
       <div class="footer">
         <div class="nav">
           <ul class="upper">
-            <li><a href="#">Aeternus</a></li>
-            <li><a href="#">Throttle Up EP</a></li>
-            <li><a href="#">Flashbacks EP</a></li>
-            <li><a href="#" data-src="escape-velocity.html">Escape Velocity</a></li>
-            <li><a href="#">Fireburner EP</a></li>
+            <li><a href="aeternus.html" class="ajax">Aeternus</a></li>
+            <li><a href="throttle-up-ep.html" class="ajax">Throttle Up EP</a></li>
+            <li><a href="flashbacks-ep.html" class="ajax">Flashbacks EP</a></li>
+            <li><a href="escape-velocity.html" class="ajax">Escape Velocity</a></li>
+            <li><a href="fireburner-ep.html" class="ajax">Fireburner EP</a></li>
           </ul>
           <ul class="lower">
             <li><a href="https://soundcloud.com/dynatronsynth">Soundcloud</a></li>
             <li><a href="https://dynatron.bandcamp.com/">Bandcamp</a></li>
             <li><a href="https://www.facebook.com/dynatronsynth">Facebook</a></li>
             <li><a href="https://twitter.com/dynatronsynth">Twitter</a></li>
+            <!-- <li><a href="#" class="mute">&#x1F507;</a></li> -->
           </ul>
+          <a href="#" class="mute">Mute</a>
         </div>
         <p class="copyright">&copy;2015 DYNATRONSYNTH.COM</p>
       </div>
