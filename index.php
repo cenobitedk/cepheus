@@ -20,9 +20,9 @@ if ($detect->isMobile()) {
     <title>Dynatron</title>
 
     <!-- Viewport mobile tag for sensible mobile support -->
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=2">
     <!--STYLES-->
-    <link rel="stylesheet" href="/styles/style.css">
+    <link rel="stylesheet" href="/styles/style.min.css">
     <!--STYLES END-->
   </head>
 
@@ -34,34 +34,20 @@ if ($detect->isMobile()) {
 
     <div class="wrapper">
       <div class="header">
-        <h1>DYNATRON</h1>
-        <p class="lead"><em>Electronic Synth inspired by 80's atmosphere.</em></p>        
+        <h1><a href="/">DYNATRON</a></h1>
+        <p class="lead">Electronic Synth inspired by 80's atmosphere</p>
       </div>
       <div class="body">
       </div>
       <div class="footer">
-        <div class="nav">
-          <ul class="upper">
-            <li><a href="aeternus.html" class="ajax">Aeternus</a></li>
-            <li><a href="throttle-up-ep.html" class="ajax">Throttle Up EP</a></li>
-            <li><a href="flashbacks-ep.html" class="ajax">Flashbacks EP</a></li>
-            <li><a href="escape-velocity.html" class="ajax">Escape Velocity</a></li>
-            <li><a href="fireburner-ep.html" class="ajax">Fireburner EP</a></li>
-          </ul>
-          <ul class="lower">
-            <li><a href="https://soundcloud.com/dynatronsynth">Soundcloud</a></li>
-            <li><a href="https://dynatron.bandcamp.com/">Bandcamp</a></li>
-            <li><a href="https://www.facebook.com/dynatronsynth">Facebook</a></li>
-            <li><a href="https://twitter.com/dynatronsynth">Twitter</a></li>
-            <!-- <li><a href="#" class="mute">&#x1F507;</a></li> -->
-          </ul>
-          <a href="#" class="mute">Mute</a>
-        </div>
+        <?php require('nav.php'); ?>
         <p class="copyright">&copy;2015 DYNATRONSYNTH.COM</p>
       </div>
     </div>
     <!--SCRIPTS-->
-    <script src="/js/main.js"></script>
+    <script src="/js/picturefill.min.js"></script>
+    <script type="text/javascript" src="https://w.soundcloud.com/player/api.js"></script>
+    <script src="/js/main.min.js"></script>
     <!--SCRIPTS END-->
   </body>
 </html>
