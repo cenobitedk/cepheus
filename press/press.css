@@ -1,0 +1,186 @@
+@import "../styles/font/familiar-pro/stylesheet.css";
+@import "../styles/font/stylesheet.css";
+
+/**
+ * BLOCKS
+ */
+
+html {
+  height: 100%;
+}
+body, div {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  display: table;
+  height: 100%;
+  width: 100%;
+}
+.sidebar {
+  display: table-cell;
+  width: 20%;
+  height: 100%;
+  padding: 10px 15px;
+  text-align: right;
+  min-width: 200px;
+  position: fixed;
+}
+.wrapper {
+  display: table-cell;
+  width: 80%;
+  text-align: center;
+}
+.block > .contents {
+  margin: 0 auto;
+  max-width: 960px;
+}
+@media screen and (max-width: 999px) {
+  .wrapper {
+    width: auto;
+    padding-left: 200px;
+  }
+}
+/**
+ * COLORS
+ */
+
+body {
+  color: #ddd;
+  background-color: #222;
+}
+a {
+  color: red;
+}
+.sidebar {
+  background-color: #111;
+}
+
+
+h1, h2, h3, h4, h5, h6,
+.heading, .copyright {
+  font-family: "familiar_probold", Arial;
+}
+.teaser {
+  font-family: "edit_undo", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 24px;
+  color: red;
+  color: rgb(220, 20, 20);
+  text-shadow:  0 0 10px rgba(220, 20, 20, 0.8), 0 0 20px rgba(220, 20, 20, 1);
+  letter-spacing: 2px;
+}
+
+
+/**
+ * SIDEBAR
+ */
+.sidebar h1 {
+  font-size: 30px;
+}
+.sidebar h1,
+.sidebar .teaser {
+    padding-bottom: 20px;
+    border-bottom: 1px solid #666;
+}
+.sidebar ul {
+  list-style-type: none;
+}
+.sidebar li {
+  padding: 5px 0;
+  font-family: "familiar_probold", Arial;
+}
+.sidebar ul a {
+  color: #ddd;
+  text-decoration: none;
+}
+.sidebar .copyright {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  color: #666;
+  font-size: 14px;
+}
+
+
+/**
+ * WRAPPER
+ */
+
+.wrapper .block {
+  padding: 20px 0 200px;
+}
+
+
+#biography,
+#discography {
+  background-image: url(bg/bg1.jpg);
+  background-repeat: repeat-y;
+  background-size: contain;
+}
+#timeline {
+  background-color: #432;
+}
+
+.timeline {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  max-width: 600px;
+  text-align: left;
+  padding: 10px 30px 50px;
+  background-color: rgba(0,0,0,0.3);
+  border-radius: 3px;
+}
+.timeline:after {
+  content: " ";
+  display: block;
+  border-left: 2px dotted #555;
+  height: 20px;
+  width: 0;
+  margin-left: 24px;
+}
+.timeline li {
+  clear: both;
+}
+.timeline h4 {
+  background-color: #555;
+  display: inline-block;
+  border-radius: 50%;
+  min-width: 50px;
+  text-align: center;
+  height: 50px;
+  line-height: 50px;
+  clear: both;
+  margin: 20px 0;
+  text-shadow: 0 1px black;
+  border-top: 1px solid #777;
+}
+.timeline h4:after,
+.timeline li + li h4:before {
+  content: " ";
+  display: block;
+  border-left: 2px solid #555;
+  height: 21px;
+  width: 0;
+  margin-left: 24px;
+}
+.timeline li + li h4:before {
+  margin-top: -21px;
+}
+.timeline p:before {
+  content: "\25CF";
+  margin-left: -32px;
+  float: left;
+  color: #555;
+  font-size: 24px;
+  line-height: 18px;
+}
+.timeline p {
+  margin-top: 0;
+  margin-left: 24px;
+  border-left: 2px solid #555;
+  padding-left: 24px;
+  padding-bottom: 15px;
+  margin-bottom: 0;
+}
