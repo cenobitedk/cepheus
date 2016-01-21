@@ -48,6 +48,7 @@ if ($detect->isMobile()) {
     <script src="/js/picturefill.min.js"></script>
     <script type="text/javascript" src="https://w.soundcloud.com/player/api.js"></script>
     <script src="/js/main.min.js"></script>
+    <?php include_once("analytics.php") ?>
     <!--SCRIPTS END-->
   </body>
 </html>
