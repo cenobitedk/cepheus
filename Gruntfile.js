@@ -47,8 +47,14 @@ module.exports = function(grunt) {
       }
     },
     watch: {
-      files: ['<%= jshint.files %>', 'styles/*.scss'],
-      tasks: ['default']
+      css: {
+        files: ['styles/*.scss'],
+        tasks: ['sass', 'cssmin']
+      },
+      js: {
+        files: ['<%= jshint.files %>'],
+        tasks: ['jshint', 'uglify']
+      }
     }
   });
 
@@ -60,5 +66,4 @@ module.exports = function(grunt) {
 
   grunt.registerTask('default', ['jshint', 'uglify', 'sass', 'cssmin']);
   grunt.registerTask('dev', ['default', 'watch']);
-
 };
