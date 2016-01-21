@@ -1,0 +1,91 @@
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  background-color: black;
+  text-align: center;
+  color: white;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+a:focus,
+a:hover {
+  text-decoration: underline;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin-bottom: 0.5em;
+}
+
+.overlay {
+  z-index: -1;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.overlay iframe,
+.overlay .shield {
+  position: absolute;
+  width: 110%;
+  height: 110%;
+  left: -5%;
+  top: -5%;
+}
+.overlay .shield {
+  background: url(../img/scanline.gif) top left repeat;
+  opacity: 0.15;
+}
+
+.desktop .wrapper {
+  display: table;
+  height: 100%;
+  width: 100%;
+  max-height: 100%;
+}
+
+.header,
+.body,
+.footer {
+  text-align: center;
+  -webkit-animation: fade-in 2s ease 1s 1;
+  -moz-animation: fade-in 2s ease 1s 1;
+  -ms-animation: fade-in 2s ease 1s 1;
+  animation: fade-in 2s ease 1s 1;
+  -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  -ms-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+.desktop .header {
+  height: 150px;
+}
+.footer {
+  height: 70px;
+}
+.desktop .header,
+.desktop .body,
+.desktop .footer {
+  display: table-row;
+}
+.mobile .body {
+  min-height: 120px;
+}
+
+.mobile .wrapper > div {
+  margin-bottom: 1em;
+}
