@@ -12,7 +12,9 @@ firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 //    after the API code downloads.
 var player;
 function onYouTubeIframeAPIReady () {
-  window.addEventListener('resize', resizePlayer);
+  window.addEventListener('resize', function() {
+    setTimeout(resizePlayer, 15);
+  });
   resizePlayer();
   player = new YT.Player('player', {
     events: {
