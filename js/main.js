@@ -204,9 +204,9 @@ document.querySelector('.body').addEventListener("DOMNodeInserted", function (ev
 
 // Preload images for subsequent faster pageloads.
 document.preloadImages = [
-  { "url": "/img/aeternus-teaser1-thumb.jpg" },
-  { "url": "/img/aeternus-teaser1-banner.jpg" },
-  { "url": "/img/aeternus-teaser1-medium.jpg" },
+  { "url": "/img/aeternus-cover-thumb.jpg" },
+  { "url": "/img/aeternus-cover-banner.jpg" },
+  { "url": "/img/aeternus-cover-medium.jpg" },
   { "url": "/img/escape-velocity-cover-thumb.jpg" },
   { "url": "/img/escape-velocity-cover-banner.jpg" },
   { "url": "/img/escape-velocity-cover-medium.jpg" },
