@@ -1,3 +1,6 @@
+
+var mobile = (document.querySelector('body.desktop') === null);
+
 // 2. This code loads the IFrame Player API code asynchronously.
 var tag = document.createElement('script');
 tag.src = "https://www.youtube.com/iframe_api";
@@ -8,6 +11,8 @@ firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 //    after the API code downloads.
 var player;
 function onYouTubeIframeAPIReady () {
+  window.addEventListener('resize', resizePlayer);
+  resizePlayer();
   player = new YT.Player('player', {
     events: {
       'onReady': onPlayerReady,
@@ -28,6 +33,14 @@ function onPlayerStateChange (event) {
     done = true;
   }
   if (done) player.playVideo();
+}
+
+function resizePlayer (event) {
+  if (mobile) {
+    var width = document.getElementById('player').offsetWidth;
+    var height = Math.round(width / (16/9));
+    document.getElementById('player').setAttribute('height', height + 'px');
+  }
 }
 
 
