@@ -3,70 +3,44 @@
 
 .body {
   overflow: scroll;
+
+  .container {
+    width: 100%;
+    max-width: 700px;
+    margin: 1em auto;
+    padding: 1em;
+    font-family: "edit_undo", "Futura", "Helvetica Neue",Helvetica,Arial,sans-serif;
+    letter-spacing: 1px;
+    color: #d32;
+    text-shadow: 0 0 10px rgba(170, 40, 30, 1);
+    background-color: #181111;
+    /* background-color: rgba(40,20,20,0.4); */
+    background-color: rgba(30,20,20,0.7);
+    box-shadow: 0 0 5px rgba(20,10,10,0.8);
+    border-radius: 3px;
+    overflow: hidden;
+    border: 0 solid white;
+    box-sizing: border-box;
+    -webkit-animation: tv-zoom 0.3s ease-in-out 0s 1;
+    -moz-animation: tv-zoom 0.3s ease-in-out 0s 1;
+    -ms-animation: tv-zoom 0.3s ease-in-out 0s 1;
+    animation: tv-zoom 0.3s ease-in-out 0s 1;
+    -webkit-animation-fill-mode: both;
+    -moz-animation-fill-mode: both;
+    -ms-animation-fill-mode: both;
+    animation-fill-mode: both;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
 }
 
-.body .container {
-  width: 100%;
-  max-width: 700px;
-  margin: 1em auto;
-  padding: 1em;
-  font-family: "edit_undo", "Futura", "Helvetica Neue",Helvetica,Arial,sans-serif;
-  letter-spacing: 1px;
-  color: #d32;
-  text-shadow: 0 0 10px rgba(170, 40, 30, 1);
-  background-color: #181111;
-  /* background-color: rgba(40,20,20,0.4); */
-  background-color: rgba(30,20,20,0.7);
-  box-shadow: 0 0 5px rgba(20,10,10,0.8);
-  border-radius: 3px;
-  overflow: hidden;
-  border: 0 solid white;
-  box-sizing: border-box;
-  -webkit-animation: tv-zoom 0.3s ease-in-out 0s 1;
-  -moz-animation: tv-zoom 0.3s ease-in-out 0s 1;
-  -ms-animation: tv-zoom 0.3s ease-in-out 0s 1;
-  animation: tv-zoom 0.3s ease-in-out 0s 1;
-  -webkit-animation-fill-mode: both;
-  -moz-animation-fill-mode: both;
-  -ms-animation-fill-mode: both;
-  animation-fill-mode: both;
-}
-
-.body .img-banner {
-  background-size: cover;
-  background-position: center;
-  margin-bottom: 1em;
-  position: relative;
-  padding: 1em;
-  border-radius: 6px;
-  overflow: hidden;
-  box-shadow: 0 0 40px 10px rgba(0,0,0,0.8) inset;
-  -webkit-transition: all 0.5s ease-in-out;
-  -moz-transition: all 0.5s ease-in-out;
-  -ms-transition: all 0.5s ease-in-out;
-  transition: all 0.5s ease-in-out;
-}
-.mobile .img-banner.expand {
-  padding: 0;
-}
-.body .img-banner:before {
-  content: " ";
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  background-color: rgba(40,20,20,0.7);
-  -webkit-transition: all 0.5s ease-in-out;
-  -moz-transition: all 0.5s ease-in-out;
-  -ms-transition: all 0.5s ease-in-out;
-  transition: all 0.5s ease-in-out;
-}
-.body .img-banner.expand:before {
-  background-color: rgba(30,20,20,0.95);
-}
-.body .img-wrap {
+.img-wrap {
   position: relative;
   font-size: 0;
   line-height: 0;
@@ -81,265 +55,259 @@
   -moz-transition: all 0.5s ease-in-out;
   -ms-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
-}
-.body .img-wrap:before {
-  content: " ";
-  display: block;
-  padding-top: 100%;
-}
-.body .img-wrap:after {
-  content: " ";
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  background-color: rgba(200,100,100,0.1);
-  cursor: pointer;
-}
-.body .expand .img-wrap {
-  width: 100%;
-  height: auto;
-}
-.body img {
-  width: 100%;
-  height: auto;
-  position: absolute;
-  left: 0;
-  top: 0;
+
+  // Make square image.
+  &:before {
+    content: " ";
+    display: block;
+    padding-top: 100%;
+  }
+
+  // Add reddish overlay.
+  &:after {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(200,100,100,0.1);
+    cursor: pointer;
+  }
+
+  .expand & {
+    width: 100%;
+    height: auto;
+  }
 }
 
-.img-banner .resize {
-  position: absolute;
-  top: 0;
-  right: 0;
-  display: block;
-  padding: 2px 4px;
-  background-color: black;
-  border: thin solid #d32;
-  border-radius: 3px;
-  margin: 10px;
-  font-size: 10px;
-  color: #d32;
-  z-index: 100;
-  text-decoration: none;
-  box-shadow: 0 0 5px rgba(20,10,10,0.8);
-}
-
-.body h2 {
-  text-transform: uppercase;
-  -webkit-animation: glitch-in 0.4s linear 0s 2;
-  -moz-animation: glitch-in 0.4s linear 0s 2;
-  -ms-animation: glitch-in 0.4s linear 0s 2;
-  animation: glitch-in 0.4s linear 0s 2;
-  -webkit-animation-fill-mode: both;
-  -moz-animation-fill-mode: both;
-  -ms-animation-fill-mode: both;
-  animation-fill-mode: both;
-}
-.mobile .body h2 {
-  font-size: 1.2em;
-}
-.body h2 + p {
-  -webkit-animation: glitch-in 0.4s linear 0.5s 1;
-  -moz-animation: glitch-in 0.4s linear 0.5s 1;
-  -ms-animation: glitch-in 0.4s linear 0.5s 1;
-  animation: glitch-in 0.4s linear 0.5s 1;
-  -webkit-animation-fill-mode: both;
-  -moz-animation-fill-mode: both;
-  -ms-animation-fill-mode: both;
-  animation-fill-mode: both;
-}
-.body ol,
-.body p {
-  font-size: 16px;
-  line-height: 18px;
-}
-.mobile .body ol,
-.mobile .body p {
-  font-size: 12px;
-  line-height: 14px;
-}
-
-.body .tracklist {
-  display: table;
-  width: 100%;
-  border-top: thin solid #752015;
-  border-bottom: thin solid #752015;
-  padding-top: 1em;
-  margin-top: 1em;
-  padding-bottom: 1em;
+.img-banner {
+  background-size: cover;
+  background-position: center;
   margin-bottom: 1em;
-}
-.body .tracklist ol {
-  list-style-type: none;
-  counter-reset: item;
-  text-align: left;
-}
-
-@media (min-width: 480px) {
-  .desktop .body .tracklist ol {
-    display: table-cell;
-    width: 50%;
-    padding-right: 0.5em;
-  }
-  .desktop .body .tracklist ol:nth-child(even) {
-    padding-right: 0;
-    padding-left: 0.5em;
-  }
-}
-
-
-
-.body small,
-.body li:before {
-  color: #a11;
-}
-.body .tracklist li {
-  padding-left: 25px;
-  padding-right: 60px;
-  clear: left;
-}
-.mobile .body .tracklist li {
-  padding-left: 20px;
-}
-.body li:nth-child(4n+0) {
-  -webkit-animation: glitch-in 0.2s linear 0.5s 3;
-  -moz-animation: glitch-in 0.2s linear 0.5s 3;
-  -ms-animation: glitch-in 0.2s linear 0.5s 3;
-  animation: glitch-in 0.2s linear 0.5s 3;
-  -webkit-animation-fill-mode: both;
-  -moz-animation-fill-mode: both;
-  -ms-animation-fill-mode: both;
-  animation-fill-mode: both;
-}
-.body li:nth-child(4n+3) {
-  -webkit-animation: glitch-in 0.3s linear 0.7s 2;
-  -moz-animation: glitch-in 0.3s linear 0.7s 2;
-  -ms-animation: glitch-in 0.3s linear 0.7s 2;
-  animation: glitch-in 0.3s linear 0.7s 2;
-  -webkit-animation-fill-mode: both;
-  -moz-animation-fill-mode: both;
-  -ms-animation-fill-mode: both;
-  animation-fill-mode: both;
-}
-.body li:nth-child(4n+1) {
-  -webkit-animation: glitch-in 0.4s linear 0.6s 1;
-  -moz-animation: glitch-in 0.4s linear 0.6s 1;
-  -ms-animation: glitch-in 0.4s linear 0.6s 1;
-  animation: glitch-in 0.4s linear 0.6s 1;
-  -webkit-animation-fill-mode: both;
-  -moz-animation-fill-mode: both;
-  -ms-animation-fill-mode: both;
-  animation-fill-mode: both;
-}
-.body li:nth-child(4n+2) {
-  -webkit-animation: glitch-in 0.3s linear 0.9s 1;
-  -moz-animation: glitch-in 0.3s linear 0.9s 1;
-  -ms-animation: glitch-in 0.3s linear 0.9s 1;
-  animation: glitch-in 0.3s linear 0.9s 1;
-  -webkit-animation-fill-mode: both;
-  -moz-animation-fill-mode: both;
-  -ms-animation-fill-mode: both;
-  animation-fill-mode: both;
-}
-.body li:before,
-.body li small {
-  display: inline-block;
-  font-size: 13px;
-  margin-top: 1px;
-}
-.body .tracklist li:before {
-  content: counter(item) ":";
-  counter-increment: item;
-  margin-left: -25px;
-  float: left;
-}
-.mobile .body .tracklist li:before {
-  margin-left: -20px;
-}
-.tracklist li.playing:after {
-  content: "\25B6";
-  font-size: 12px;
-  color: #e54;
-  text-shadow: 0 0 10px rgba(238, 85, 68, 1);
-  -webkit-animation: fade-in 1s alternate-reverse 0s infinite;
-  -moz-animation: fade-in 1s alternate-reverse 0s infinite;
-  -ms-animation: fade-in 1s alternate-reverse 0s infinite;
-  animation: fade-in 1s alternate-reverse 0s infinite;
-  -webkit-animation-fill-mode: both;
-  -moz-animation-fill-mode: both;
-  -ms-animation-fill-mode: both;
-  animation-fill-mode: both;
-}
-.body .tracklist li small {
-  float: right;
-  margin-right: -60px;
-}
-.body .tracklist li small:before {
-  content: " - ";
-}
-
-.mobile .body li:before,
-.mobile .body li small {
-  font-size: 10px;
-}
-.body #SCwidget .loading {
-  -webkit-animation: fade-in 1s alternate-reverse 0s infinite;
-  -moz-animation: fade-in 1s alternate-reverse 0s infinite;
-  -ms-animation: fade-in 1s alternate-reverse 0s infinite;
-  animation: fade-in 1s alternate-reverse 0s infinite;
-  -webkit-animation-fill-mode: both;
-  -moz-animation-fill-mode: both;
-  -ms-animation-fill-mode: both;
-  animation-fill-mode: both;
-}
-.body #SCwidget * + span {
-  display: none;
-}
-.body a.close {
-  border-top: thin solid #752015;
-  color: #d32;
-  margin-top: 1em;
-  padding-top: 1em;
-  display: block;
-}
-.mobile .body a.close {
-  display: none;
-}
-
-.body .about li {
-  text-align: left;
-  list-style-type: none;
   position: relative;
-  margin-left: 50px;
-}
-.body .about li p.pre {
-  font-size: 120%;
-  margin-top: 1em;
-  margin-left: -50px;
-}
-.body .about li:after {
-  content: " ";
-  height: 0;
-  width: 100%;
-  border-bottom: thin solid #752015;
-  display: block;
-  position: absolute;
-  top: 0.5em;
-  left: 0;
-  box-shadow: 0 0 10px rgba(170, 40, 30, 1);
-}
-.body .about li p + p {
-  font-size: 11px;
-  line-height: 14px;
-  font-family: "Apple II", "Lucida Console", Monaco, monospace;
-  text-transform: uppercase;
-  letter-spacing: -1px;
+  padding: 1em;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 0 40px 10px rgba(0,0,0,0.8) inset;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+
+  &:before {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(40,20,20,0.7);
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+  }
+
+  &.expand:before {
+    background-color: rgba(30,20,20,0.95);
+  }
+
+  .mobile & {
+    &.expand {
+      padding: 0;
+    }
+  }
 }
 
-.mobile .body .about p + p {
-  font-size: 10px;
-  line-height: 13px;
+
+
+.body {
+  h2 {
+    text-transform: uppercase;
+    -webkit-animation: glitch-in 0.4s linear 0s 2;
+    -moz-animation: glitch-in 0.4s linear 0s 2;
+    -ms-animation: glitch-in 0.4s linear 0s 2;
+    animation: glitch-in 0.4s linear 0s 2;
+    -webkit-animation-fill-mode: both;
+    -moz-animation-fill-mode: both;
+    -ms-animation-fill-mode: both;
+    animation-fill-mode: both;
+
+    .mobile & {
+      font-size: 1.2em;
+    }
+
+    + p {
+      -webkit-animation: glitch-in 0.4s linear 0.5s 1;
+      -moz-animation: glitch-in 0.4s linear 0.5s 1;
+      -ms-animation: glitch-in 0.4s linear 0.5s 1;
+      animation: glitch-in 0.4s linear 0.5s 1;
+      -webkit-animation-fill-mode: both;
+      -moz-animation-fill-mode: both;
+      -ms-animation-fill-mode: both;
+      animation-fill-mode: both;
+    }
+  }
+
+  ol,
+  p {
+    font-size: 16px;
+    line-height: 18px;
+
+    .mobile & {
+      font-size: 12px;
+      line-height: 14px;
+    }
+  }
+
+  small,
+  li:before {
+    color: #a11;
+  }
+
+  li {
+    &:before,
+    small {
+      display: inline-block;
+      font-size: 13px;
+      margin-top: 1px;
+
+      .mobile & {
+        font-size: 10px;
+      }
+    }
+
+    &:nth-child(4n+0) {
+      -webkit-animation: glitch-in 0.2s linear 0.5s 3;
+      -moz-animation: glitch-in 0.2s linear 0.5s 3;
+      -ms-animation: glitch-in 0.2s linear 0.5s 3;
+      animation: glitch-in 0.2s linear 0.5s 3;
+      -webkit-animation-fill-mode: both;
+      -moz-animation-fill-mode: both;
+      -ms-animation-fill-mode: both;
+      animation-fill-mode: both;
+    }
+    &:nth-child(4n+3) {
+      -webkit-animation: glitch-in 0.3s linear 0.7s 2;
+      -moz-animation: glitch-in 0.3s linear 0.7s 2;
+      -ms-animation: glitch-in 0.3s linear 0.7s 2;
+      animation: glitch-in 0.3s linear 0.7s 2;
+      -webkit-animation-fill-mode: both;
+      -moz-animation-fill-mode: both;
+      -ms-animation-fill-mode: both;
+      animation-fill-mode: both;
+    }
+    &:nth-child(4n+1) {
+      -webkit-animation: glitch-in 0.4s linear 0.6s 1;
+      -moz-animation: glitch-in 0.4s linear 0.6s 1;
+      -ms-animation: glitch-in 0.4s linear 0.6s 1;
+      animation: glitch-in 0.4s linear 0.6s 1;
+      -webkit-animation-fill-mode: both;
+      -moz-animation-fill-mode: both;
+      -ms-animation-fill-mode: both;
+      animation-fill-mode: both;
+    }
+    &:nth-child(4n+2) {
+      -webkit-animation: glitch-in 0.3s linear 0.9s 1;
+      -moz-animation: glitch-in 0.3s linear 0.9s 1;
+      -ms-animation: glitch-in 0.3s linear 0.9s 1;
+      animation: glitch-in 0.3s linear 0.9s 1;
+      -webkit-animation-fill-mode: both;
+      -moz-animation-fill-mode: both;
+      -ms-animation-fill-mode: both;
+      animation-fill-mode: both;
+    }
+  }
+
+
+  .tracklist {
+    display: table;
+    width: 100%;
+    border-top: thin solid #752015;
+    border-bottom: thin solid #752015;
+    padding-top: 1em;
+    margin-top: 1em;
+    padding-bottom: 1em;
+    margin-bottom: 1em;
+
+    ol {
+      list-style-type: none;
+      counter-reset: item;
+      text-align: left;
+
+      .desktop & {
+        @media (min-width: 580px) {
+          &:not(:only-child) {
+            display: table-cell;
+            width: 50%;
+            padding-right: 0.5em;
+          }
+
+          &:nth-child(even) {
+            padding-right: 0;
+            padding-left: 0.5em;
+          }
+        }
+      }
+    }
+    li {
+      padding-left: 25px;
+      padding-right: 60px;
+      clear: left;
+
+      .mobile & {
+        padding-left: 20px;
+      }
+
+      &:before {
+        content: counter(item) ":";
+        counter-increment: item;
+        margin-left: -25px;
+        float: left;
+
+        .mobile & {
+          margin-left: -20px;
+        }
+      }
+
+      small {
+        float: right;
+        margin-right: -60px;
+
+        &:before {
+          content: " - ";
+        }
+      }
+
+      &.playing:after {
+        content: "\25B6";
+        font-size: 12px;
+        color: #e54;
+        text-shadow: 0 0 10px rgba(238, 85, 68, 1);
+        -webkit-animation: fade-in 1s alternate-reverse 0s infinite;
+        -moz-animation: fade-in 1s alternate-reverse 0s infinite;
+        -ms-animation: fade-in 1s alternate-reverse 0s infinite;
+        animation: fade-in 1s alternate-reverse 0s infinite;
+        -webkit-animation-fill-mode: both;
+        -moz-animation-fill-mode: both;
+        -ms-animation-fill-mode: both;
+        animation-fill-mode: both;
+      }
+    }
+  }
+
+  a.close {
+    border-top: thin solid #752015;
+    color: #d32;
+    margin-top: 1em;
+    padding-top: 1em;
+    display: block;
+
+    .mobile & {
+      display: none;
+    }
+  }
 }
