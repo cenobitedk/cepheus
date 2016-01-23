@@ -1,0 +1,40 @@
+
+.about {
+  li {
+    text-align: left;
+    list-style-type: none;
+    position: relative;
+    margin-left: 50px;
+
+    &:after {
+      content: " ";
+      height: 0;
+      width: 100%;
+      border-bottom: thin solid #752015;
+      display: block;
+      position: absolute;
+      top: 0.5em;
+      left: 0;
+      box-shadow: 0 0 10px rgba(170, 40, 30, 1);
+    }
+
+    p.pre {
+      font-size: 120%;
+      margin-top: 1em;
+      margin-left: -50px;
+    }
+
+    p + p {
+      font-size: 11px;
+      line-height: 14px;
+      font-family: "Apple II", "Lucida Console", Monaco, monospace;
+      text-transform: uppercase;
+      letter-spacing: -1px;
+
+      .mobile & {
+        font-size: 10px;
+        line-height: 13px;
+      }
+    }
+  }
+}

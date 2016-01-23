@@ -1,0 +1,78 @@
+
+/* HEADER */
+
+h1 {
+  a {
+    display: block;
+    letter-spacing: 1em;
+    padding-top: 70px;
+    padding-left: 1em;
+    padding-bottom: 0.5em;
+    text-indent: -9999px;
+    background-repeat: no-repeat;
+    background-position: center 70%;
+
+    .desktop & {
+      background-image: url(../img/logo_white_w320.png);
+    }
+
+    .mobile & {
+      padding-top: 30px;
+      letter-spacing: 0.6em;
+      padding-left: 0.05em;
+      background-image: url(../img/logo_w300.gif);
+    }
+  }
+
+  .mobile & {
+    margin-bottom: 0;
+  }
+
+  @media (max-width: 299px) {
+    background-size: 98%;
+  }
+}
+
+.lead {
+  font-size: 15px;
+  font-weight: 100;
+  font-family: "DOT2";
+  font-family: "Apple II", "Lucida Console", Monaco, monospace;
+  font-size: 9.5px;
+  color: #fff5c8;
+  letter-spacing: -1.5px;
+  text-transform: uppercase;
+  position: relative;
+  display: inline-block;
+  padding: 5px 8px 3px;
+  border: thin solid #fff5c8;
+  border-radius: 10px;
+  text-shadow: 0 0 10px rgba(255, 245, 200, 1), 0 0 20px rgba(255, 245, 200, 1);
+  box-shadow: 0 0 12px rgba(255, 245, 200, 0.5);
+
+  .desktop & {
+    &:before,
+    &:after {
+      content: " ";
+      height: 0;
+      width: 20em;
+      border-bottom: thin solid #057535;
+      border-color: #1779bf;
+      border-color: #fff5c8;
+      display: block;
+      position: absolute;
+      bottom: 45%;
+      box-shadow: 0 0 6px rgba(255, 245, 200, 1), 0 0 12px rgba(255, 245, 200, 1);
+    }
+    &:before {
+      right: 100%;
+    }
+    &:after {
+      left: 100%;
+    }
+  }
+
+  .mobile & {
+    margin-bottom: 10px;
+  }
+}
