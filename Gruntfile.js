@@ -21,6 +21,17 @@ module.exports = function(grunt) {
         }
       }
     },
+    sass: {
+      options: {
+        sourceMap: true,
+        outputStyle: 'expanded'
+      },
+      dist: {
+        files: {
+          'styles/style.css' : 'styles/style.scss'
+        }
+      }
+    },
     cssmin: {
       options: {
         processImport: false
@@ -36,17 +47,23 @@ module.exports = function(grunt) {
       }
     },
     watch: {
-      files: ['<%= jshint.files %>', 'styles/*.css', '!styles/*.min.css'],
-      tasks: ['default']
+      css: {
+        files: ['styles/*.scss'],
+        tasks: ['sass', 'cssmin']
+      },
+      js: {
+        files: ['<%= jshint.files %>'],
+        tasks: ['jshint', 'uglify']
+      }
     }
   });
 
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks('grunt-sass');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-contrib-watch');
 
-  grunt.registerTask('default', ['jshint', 'uglify', 'cssmin']);
+  grunt.registerTask('default', ['jshint', 'uglify', 'sass', 'cssmin']);
   grunt.registerTask('dev', ['default', 'watch']);
-
 };
