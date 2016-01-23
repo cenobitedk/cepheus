@@ -21,14 +21,33 @@
     overflow: hidden;
     border: 0 solid white;
     box-sizing: border-box;
-    -webkit-animation: tv-zoom 0.3s ease-in-out 0s 1;
-    -moz-animation: tv-zoom 0.3s ease-in-out 0s 1;
-    -ms-animation: tv-zoom 0.3s ease-in-out 0s 1;
-    animation: tv-zoom 0.3s ease-in-out 0s 1;
+    -webkit-animation: tv-zoom2 0.3s ease-in-out 0s 1;
+    -moz-animation: tv-zoom2 0.3s ease-in-out 0s 1;
+    -ms-animation: tv-zoom2 0.3s ease-in-out 0s 1;
+    animation: tv-zoom2 0.3s ease-in-out 0s 1;
     -webkit-animation-fill-mode: both;
     -moz-animation-fill-mode: both;
     -ms-animation-fill-mode: both;
     animation-fill-mode: both;
+
+    &:after {
+      content: " ";
+      position: absolute;
+      top: 100%;
+      bottom: 100%;
+      left: 0;
+      right: 0;
+      background-color: #ffe7dd;
+      border-radius: 3px;
+      -webkit-animation: tv-flash 0.3s linear 0s 1;
+      -moz-animation: tv-flash 0.3s linear 0s 1;
+      -ms-animation: tv-flash 0.3s linear 0s 1;
+      animation: tv-flash 0.3s linear 0s 1;
+      -webkit-animation-fill-mode: both;
+      -moz-animation-fill-mode: both;
+      -ms-animation-fill-mode: both;
+      animation-fill-mode: both;
+    }
   }
 
   img {
@@ -221,7 +240,6 @@
       animation-fill-mode: both;
     }
   }
-
 
   .tracklist {
     display: table;

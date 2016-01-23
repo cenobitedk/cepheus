@@ -1,15 +1,13 @@
 #SCwidget {
   .loading {
-    -webkit-animation: fade-in 1s alternate-reverse 0s infinite;
-    -moz-animation: fade-in 1s alternate-reverse 0s infinite;
-    -ms-animation: fade-in 1s alternate-reverse 0s infinite;
-    animation: fade-in 1s alternate-reverse 0s infinite;
-    -webkit-animation-fill-mode: both;
-    -moz-animation-fill-mode: both;
-    -ms-animation-fill-mode: both;
-    animation-fill-mode: both;
+    line-height: 169px;
+    background-image: url("/img/giphy.gif");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-color: black;
+    border-radius: 5px;
   }
-  * + span {
+  * + .loading {
     display: none;
   }
 }

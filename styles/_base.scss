@@ -40,7 +40,8 @@ h1, h2, h3, h4, h5, h6, p {
   overflow: hidden;
 
   iframe,
-  .shield {
+  .shield,
+  .logo {
     position: absolute;
     width: 110%;
     height: 110%;
@@ -51,6 +52,28 @@ h1, h2, h3, h4, h5, h6, p {
   .shield {
     background: url(/img/scanline.gif) top left repeat;
     opacity: 0.15;
+  }
+
+  .logo {
+    background-color: black;
+    -webkit-animation: fade-in 1s ease 2.5s 1 reverse;
+    -moz-animation:  fade-in 1s ease 2.5s 1 reverse;
+    -ms-animation:  fade-in 1s ease 2.5s 1 reverse;
+    animation:  fade-in 1s ease 2.5s 1 reverse;
+    -webkit-animation-fill-mode: forwards;
+    -moz-animation-fill-mode: forwards;
+    -ms-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+
+    img {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 500px;
+      height: 500px;
+      margin-top: -250px;
+      margin-left: -250px;
+    }
   }
 }
 
