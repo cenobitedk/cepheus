@@ -1,3 +1,7 @@
+
+var mobile = (document.querySelector('body.desktop') === null);
+var mutebtn = document.querySelector('a.mute');
+
 // 2. This code loads the IFrame Player API code asynchronously.
 var tag = document.createElement('script');
 tag.src = "https://www.youtube.com/iframe_api";
@@ -8,6 +12,10 @@ firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 //    after the API code downloads.
 var player;
 function onYouTubeIframeAPIReady () {
+  window.addEventListener('resize', function() {
+    setTimeout(resizePlayer, 15);
+  });
+  resizePlayer();
   player = new YT.Player('player', {
     events: {
       'onReady': onPlayerReady,
@@ -24,15 +32,37 @@ function onPlayerReady (event) {
 // 5. The API calls this function when the player's state changes.
 var done = false;
 function onPlayerStateChange (event) {
-  if (event.data == YT.PlayerState.ENDED) {
+  if (event.data === YT.PlayerState.ENDED) {
     done = true;
   }
-  if (done) player.playVideo();
+  if (done) {
+    player.playVideo();
+  }
+}
+
+function resizePlayer (event) {
+  var width, height, player = document.getElementById('player');
+  if (mobile) {
+    width = player.offsetWidth;
+    height = Math.round(width / (16/9));
+    player.setAttribute('height', height + 'px');
+  }
+  else {
+    height = player.offsetHeight;
+    width = Math.round(height * (16/9));
+    var parentWidth = player.parentElement.offsetWidth;
+    var newWidth = Math.round((width * 100) / parentWidth + 10);
+    var newLeft = (newWidth - 100) / -2;
+
+    player.style.width = newWidth + '%';
+    player.style.left = newLeft + '%';
+  }
 }
 
 
 function toggleMute (el, force) {
-  if (force === undefined) force = !player.isMuted();
+  if (typeof el === 'undefined') el = mutebtn;
+  if (typeof force === 'undefined') force = !player.isMuted();
   if (document.querySelector('#player') === null) {
     return;
   } else if (force === false) {
@@ -43,6 +73,7 @@ function toggleMute (el, force) {
     player.mute();
     toggleClass(el, 'active', true);
   }
+  return force;
 }
 
 function hasClass (el, className) {
@@ -51,7 +82,6 @@ function hasClass (el, className) {
 
 function addClass (el, className) {
   var arr = el.className.split(' ');
-  var i = arr.indexOf(className);
   if (!hasClass.apply(window, arguments)) arr.push(className);
   el.className = arr.join(' ');
 }
@@ -64,7 +94,7 @@ function removeClass (el, className) {
 }
 
 function toggleClass (el, className, force) {
-  if (force === undefined) force = !(hasClass.apply(window, arguments));
+  if (typeof force === 'undefined') force = !(hasClass.apply(window, arguments));
   return (force) ? addClass.apply(window, arguments) : removeClass.apply(window, arguments);
 }
 
@@ -100,7 +130,9 @@ function injectHTML (event) {
   var t = document.querySelector('.body');
   t.innerHTML = '';
   t.insertAdjacentHTML('afterbegin', r);
-  picturefill();
+  if (typeof picturefill == 'function') {
+    picturefill();
+  }
 }
 
 var loaded;
@@ -110,7 +142,7 @@ function ajax (event) {
   var r = new XMLHttpRequest();
   r.open("GET", dest, true);
   r.onreadystatechange = function () {
-    if (r.readyState != 4 || r.status != 200) return;
+    if (r.readyState !== 4 || r.status !== 200) return;
     loaded = dest;
     injectHTML.apply(window, arguments);
   };
@@ -124,7 +156,7 @@ function ajaxOembed (el) {
     var r = new XMLHttpRequest();
     r.open("GET", dest, true);
     r.onreadystatechange = function (event) {
-      if (r.readyState != 4 || r.status != 200) return;
+      if (r.readyState !== 4 || r.status !== 200) return;
       var response = JSON.parse(event.target.response);
       el.innerHTML = '';
       el.insertAdjacentHTML('afterbegin', response.html);
@@ -198,7 +230,7 @@ document.querySelector('.body').addEventListener("DOMNodeInserted", function (ev
   if (oembed !== null) ajaxOembed.call(window, oembed);
   // process iframe, attach SC widget api.
   var iframe = event.relatedNode.querySelector('iframe');
-  if (iframe !== null && typeof(SC) !== "undefined") setTimeout(attachSC, 100, iframe);
+  if (iframe !== null && typeof SC !== 'undefined') setTimeout(attachSC, 100, iframe);
 }, false);
 
 
