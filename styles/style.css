@@ -914,10 +914,6 @@ h1 a {
 }
 
 /** BODY **/
-.body {
-  overflow: scroll;
-}
-
 .body .container {
   width: 100%;
   max-width: 700px;
