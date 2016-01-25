@@ -2,44 +2,6 @@
 var mobile = (document.querySelector('body.desktop') === null);
 var mutebtn = document.querySelector('a.mute');
 
-// 2. This code loads the IFrame Player API code asynchronously.
-var tag = document.createElement('script');
-tag.src = "https://www.youtube.com/iframe_api";
-var firstScriptTag = document.getElementsByTagName('script')[0];
-firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-// 3. This function loads an <iframe> (and YouTube player)
-//    after the API code downloads.
-var player;
-function onYouTubeIframeAPIReady () {
-  window.addEventListener('resize', function() {
-    setTimeout(resizePlayer, 15);
-  });
-  resizePlayer();
-  player = new YT.Player('player', {
-    events: {
-      'onReady': onPlayerReady,
-      'onStateChange': onPlayerStateChange
-    }
-  });
-}
-
-// 4. The API will call this function when the video player is ready.
-function onPlayerReady (event) {
-  event.target.playVideo();
-}
-
-// 5. The API calls this function when the player's state changes.
-var done = false;
-function onPlayerStateChange (event) {
-  if (event.data === YT.PlayerState.ENDED) {
-    done = true;
-  }
-  if (done) {
-    player.playVideo();
-  }
-}
-
 function resizePlayer (event) {
   var width, height, player = document.getElementById('player');
   if (mobile) {
@@ -59,6 +21,36 @@ function resizePlayer (event) {
   }
 }
 
+// 2. This code loads the IFrame Player API code asynchronously.
+var tag = document.createElement('script');
+tag.src = "https://www.youtube.com/iframe_api";
+var firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+// 3. This function loads an <iframe> (and YouTube player)
+//    after the API code downloads.
+var player, done = false;
+function onYouTubeIframeAPIReady () {
+  window.addEventListener('resize', function() {
+    setTimeout(resizePlayer, 15);
+  });
+  resizePlayer();
+  player = new YT.Player('player', {
+    events: {
+      'onReady': function (event) {
+        event.target.playVideo();
+      },
+      'onStateChange': function (event) {
+        if (event.data === YT.PlayerState.ENDED) {
+          done = true;
+        }
+        if (done) {
+          player.playVideo();
+        }
+      }
+    }
+  });
+}
 
 function toggleMute (el, force) {
   if (typeof el === 'undefined') {
