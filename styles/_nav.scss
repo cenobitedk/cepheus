@@ -8,12 +8,8 @@
   border-color: rgba(30, 170, 100, 0.6);
   border-width: 1px 0;
   -webkit-animation: zoom 0.2s ease-out 2s 1;
-  -moz-animation: zoom 0.2s ease-out 2s 1;
-  -ms-animation: zoom 0.2s ease-out 2s 1;
   animation: zoom 0.2s ease-out 2s 1;
   -webkit-animation-fill-mode: both;
-  -moz-animation-fill-mode: both;
-  -ms-animation-fill-mode: both;
   animation-fill-mode: both;
 
   .mobile &,
@@ -167,12 +163,8 @@
       &.active {
         &:before {
           -webkit-animation: fade-in 1s alternate-reverse 0s infinite;
-          -moz-animation: fade-in 1s alternate-reverse 0s infinite;
-          -ms-animation: fade-in 1s alternate-reverse 0s infinite;
           animation: fade-in 1s alternate-reverse 0s infinite;
           -webkit-animation-fill-mode: both;
-          -moz-animation-fill-mode: both;
-          -ms-animation-fill-mode: both;
           animation-fill-mode: both;
         }
       }
@@ -196,42 +188,26 @@
 
     &:nth-child(4n+0) {
       -webkit-animation: glitch-in 0.3s linear 2s 4;
-      -moz-animation: glitch-in 0.3s linear 2s 4;
-      -ms-animation: glitch-in 0.3s linear 2s 4;
       animation: glitch-in 0.3s linear 2s 4;
       -webkit-animation-fill-mode: both;
-      -moz-animation-fill-mode: both;
-      -ms-animation-fill-mode: both;
       animation-fill-mode: both;
     }
     &:nth-child(4n+3) {
       -webkit-animation: glitch-in 0.3s linear 2.2s 3;
-      -moz-animation: glitch-in 0.3s linear 2.2s 3;
-      -ms-animation: glitch-in 0.3s linear 2.2s 3;
       animation: glitch-in 0.3s linear 2.2s 3;
       -webkit-animation-fill-mode: both;
-      -moz-animation-fill-mode: both;
-      -ms-animation-fill-mode: both;
       animation-fill-mode: both;
     }
     &:nth-child(4n+1) {
       -webkit-animation: glitch-in 0.3s linear 2.3s 2;
-      -moz-animation: glitch-in 0.3s linear 2.3s 2;
-      -ms-animation: glitch-in 0.3s linear 2.3s 2;
       animation: glitch-in 0.3s linear 2.3s 2;
       -webkit-animation-fill-mode: both;
-      -moz-animation-fill-mode: both;
-      -ms-animation-fill-mode: both;
       animation-fill-mode: both;
     }
     &:nth-child(4n+2) {
       -webkit-animation: glitch-in 0.3s linear 2.5s 1;
-      -moz-animation: glitch-in 0.3s linear 2.5s 1;
-      -ms-animation: glitch-in 0.3s linear 2.5s 1;
       animation: glitch-in 0.3s linear 2.5s 1;
       -webkit-animation-fill-mode: both;
-      -moz-animation-fill-mode: both;
-      -ms-animation-fill-mode: both;
       animation-fill-mode: both;
     }
   }

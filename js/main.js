@@ -2,44 +2,6 @@
 var mobile = (document.querySelector('body.desktop') === null);
 var mutebtn = document.querySelector('a.mute');
 
-// 2. This code loads the IFrame Player API code asynchronously.
-var tag = document.createElement('script');
-tag.src = "https://www.youtube.com/iframe_api";
-var firstScriptTag = document.getElementsByTagName('script')[0];
-firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-// 3. This function loads an <iframe> (and YouTube player)
-//    after the API code downloads.
-var player;
-function onYouTubeIframeAPIReady () {
-  window.addEventListener('resize', function() {
-    setTimeout(resizePlayer, 15);
-  });
-  resizePlayer();
-  player = new YT.Player('player', {
-    events: {
-      'onReady': onPlayerReady,
-      'onStateChange': onPlayerStateChange
-    }
-  });
-}
-
-// 4. The API will call this function when the video player is ready.
-function onPlayerReady (event) {
-  event.target.playVideo();
-}
-
-// 5. The API calls this function when the player's state changes.
-var done = false;
-function onPlayerStateChange (event) {
-  if (event.data === YT.PlayerState.ENDED) {
-    done = true;
-  }
-  if (done) {
-    player.playVideo();
-  }
-}
-
 function resizePlayer (event) {
   var width, height, player = document.getElementById('player');
   if (mobile) {
@@ -59,17 +21,53 @@ function resizePlayer (event) {
   }
 }
 
+// 2. This code loads the IFrame Player API code asynchronously.
+var tag = document.createElement('script');
+tag.src = "https://www.youtube.com/iframe_api";
+var firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+// 3. This function loads an <iframe> (and YouTube player)
+//    after the API code downloads.
+var player, done = false;
+function onYouTubeIframeAPIReady () {
+  window.addEventListener('resize', function() {
+    setTimeout(resizePlayer, 15);
+  });
+  resizePlayer();
+  player = new YT.Player('player', {
+    events: {
+      'onReady': function (event) {
+        event.target.playVideo();
+      },
+      'onStateChange': function (event) {
+        if (event.data === YT.PlayerState.ENDED) {
+          done = true;
+        }
+        if (done) {
+          player.playVideo();
+        }
+      }
+    }
+  });
+}
 
 function toggleMute (el, force) {
-  if (typeof el === 'undefined') el = mutebtn;
-  if (typeof force === 'undefined') force = !player.isMuted();
+  if (typeof el === 'undefined') {
+    el = mutebtn;
+  }
+  if (typeof force === 'undefined') {
+    force = !player.isMuted();
+  }
   if (document.querySelector('#player') === null) {
     return;
-  } else if (force === false) {
+  }
+  else if (force === false) {
     player.unMute();
     toggleClass(el, 'active', false);
     if (SCwidget !== null) SCwidget.pause();
-  } else if (force === true) {
+  }
+  else if (force === true) {
     player.mute();
     toggleClass(el, 'active', true);
   }
@@ -82,19 +80,25 @@ function hasClass (el, className) {
 
 function addClass (el, className) {
   var arr = el.className.split(' ');
-  if (!hasClass.apply(window, arguments)) arr.push(className);
+  if (!hasClass.apply(window, arguments)) {
+    arr.push(className);
+  }
   el.className = arr.join(' ');
 }
 
 function removeClass (el, className) {
   var arr = el.className.split(' ');
   var i = arr.indexOf(className);
-  if (hasClass.apply(window, arguments)) arr.splice(i, 1);
+  if (hasClass.apply(window, arguments)) {
+    arr.splice(i, 1);
+  }
   el.className = arr.join(' ');
 }
 
 function toggleClass (el, className, force) {
-  if (typeof force === 'undefined') force = !(hasClass.apply(window, arguments));
+  if (typeof force === 'undefined') {
+    force = !(hasClass.apply(window, arguments));
+  }
   return (force) ? addClass.apply(window, arguments) : removeClass.apply(window, arguments);
 }
 
@@ -122,7 +126,9 @@ function markPlayingTrack () {
 
 function unMarkPlayingTrack () {
   var track = document.querySelector('.tracklist .playing');
-  if (track !== null) removeClass(track, 'playing');
+  if (track !== null) {
+    removeClass(track, 'playing');
+  }
 }
 
 function injectHTML (event) {
@@ -138,11 +144,15 @@ function injectHTML (event) {
 var loaded;
 function ajax (event) {
   var dest = event.target.href.replace('/m', '');
-  if (dest === loaded) return;
+  if (dest === loaded) {
+    return;
+  }
   var r = new XMLHttpRequest();
   r.open("GET", dest, true);
   r.onreadystatechange = function () {
-    if (r.readyState !== 4 || r.status !== 200) return;
+    if (r.readyState !== 4 || r.status !== 200) {
+      return;
+    }
     loaded = dest;
     injectHTML.apply(window, arguments);
   };
@@ -156,7 +166,9 @@ function ajaxOembed (el) {
     var r = new XMLHttpRequest();
     r.open("GET", dest, true);
     r.onreadystatechange = function (event) {
-      if (r.readyState !== 4 || r.status !== 200) return;
+      if (r.readyState !== 4 || r.status !== 200) {
+        return;
+      }
       var response = JSON.parse(event.target.response);
       el.innerHTML = '';
       el.insertAdjacentHTML('afterbegin', response.html);
@@ -215,7 +227,9 @@ document.addEventListener('click', function(e) {
   }
   if (e.target.hash === '#close') {
     e.preventDefault();
-    if (SCwidget !== null) SCwidget = null;
+    if (SCwidget !== null) {
+      SCwidget = null;
+    }
     clearInterval(timer);
     var n = e.target.parentNode;
     n.parentNode.removeChild(n);
@@ -227,10 +241,14 @@ document.addEventListener('click', function(e) {
 document.querySelector('.body').addEventListener("DOMNodeInserted", function (event) {
   // process oembed wrappers.
   var oembed = event.relatedNode.querySelector('#SCwidget');
-  if (oembed !== null) ajaxOembed.call(window, oembed);
+  if (oembed !== null) {
+    ajaxOembed.call(window, oembed);
+  }
   // process iframe, attach SC widget api.
   var iframe = event.relatedNode.querySelector('iframe');
-  if (iframe !== null && typeof SC !== 'undefined') setTimeout(attachSC, 100, iframe);
+  if (iframe !== null && typeof SC !== 'undefined') {
+    setTimeout(attachSC, 100, iframe);
+  }
 }, false);
 
 
@@ -255,7 +273,7 @@ document.preloadImages = [
   { "url": "/img/D-500x500-banner.jpg" },
   { "url": "/img/D-500x500-medium.jpg" }
 ];
-var del = document.querySelector('body.desktop') === null ? 10000 : 4000;
+var preloadDelay = document.querySelector('body.desktop') === null ? 10000 : 4000;
 setTimeout(function() {
   if (document.preloadImages) {
     var load = function (image) {
@@ -266,4 +284,4 @@ setTimeout(function() {
       setTimeout(load, 100, img);
     }
   }
-}, del);
+}, preloadDelay);
