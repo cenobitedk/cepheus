@@ -8,24 +8,6 @@
   }
 }
 
-@-moz-keyframes fade-in {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-@-ms-keyframes fade-in {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
 @keyframes fade-in {
   0% {
     opacity: 0;
@@ -50,42 +32,6 @@
     padding: 1em;
     border-width: 0;
     -webkit-transform: scale(1, 1);
-  }
-}
-
-@-moz-keyframes tv-zoom {
-  0% {
-    margin: 0 auto;
-    border-width: 1em 1px;
-    -moz-transform: scale(0.01, 0.02);
-  }
-  60% {
-    border-right-width: 1px;
-    border-left-width: 1px;
-    -moz-transform: scale(1, 0.03);
-  }
-  100% {
-    margin: 1em auto;
-    border-width: 0;
-    -moz-transform: scale(1, 1);
-  }
-}
-
-@-ms-keyframes tv-zoom {
-  0% {
-    margin: 0 auto;
-    border-width: 1em 1px;
-    -ms-transform: scale(0.01, 0.02);
-  }
-  60% {
-    border-right-width: 1px;
-    border-left-width: 1px;
-    -ms-transform: scale(1, 0.03);
-  }
-  100% {
-    margin: 1em auto;
-    border-width: 0;
-    -ms-transform: scale(1, 1);
   }
 }
 
@@ -119,30 +65,6 @@
   }
 }
 
-@-moz-keyframes tv-zoom2 {
-  0% {
-    -moz-transform: scale(0.01, 0.02);
-  }
-  60% {
-    -moz-transform: scale(1, 0.03);
-  }
-  100% {
-    -moz-transform: scale(1, 1);
-  }
-}
-
-@-ms-keyframes tv-zoom2 {
-  0% {
-    -ms-transform: scale(0.01, 0.02);
-  }
-  60% {
-    -ms-transform: scale(1, 0.03);
-  }
-  100% {
-    -ms-transform: scale(1, 1);
-  }
-}
-
 @keyframes tv-zoom2 {
   0% {
     transform: scale(0.01, 0.02);
@@ -156,48 +78,6 @@
 }
 
 @-webkit-keyframes tv-flash {
-  0% {
-    opacity: 1;
-    top: 0;
-    bottom: 0;
-  }
-  60% {
-    opacity: 0.8;
-    top: 0;
-    bottom: 0;
-  }
-  90% {
-    opacity: 0.1;
-    top: 0;
-    bottom: 0;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-
-@-moz-keyframes tv-flash {
-  0% {
-    opacity: 1;
-    top: 0;
-    bottom: 0;
-  }
-  60% {
-    opacity: 0.8;
-    top: 0;
-    bottom: 0;
-  }
-  90% {
-    opacity: 0.1;
-    top: 0;
-    bottom: 0;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-
-@-ms-keyframes tv-flash {
   0% {
     opacity: 1;
     top: 0;
@@ -248,24 +128,6 @@
   }
 }
 
-@-moz-keyframes zoom {
-  0% {
-    -moz-transform: scaleY(0);
-  }
-  100% {
-    -moz-transform: scaleY(1);
-  }
-}
-
-@-ms-keyframes zoom {
-  0% {
-    -ms-transform: scaleY(0);
-  }
-  100% {
-    -ms-transform: scaleY(1);
-  }
-}
-
 @keyframes zoom {
   0% {
     transform: scaleY(0);
@@ -276,90 +138,6 @@
 }
 
 @-webkit-keyframes glitch-in {
-  0% {
-    opacity: 0;
-  }
-  10% {
-    opacity: 0.8;
-  }
-  15% {
-    opacity: 0;
-  }
-  35% {
-    opacity: 0;
-  }
-  36% {
-    opacity: 1;
-  }
-  38% {
-    opacity: 0;
-  }
-  60% {
-    opacity: 0;
-  }
-  63% {
-    opacity: 0.5;
-  }
-  65% {
-    opacity: 0;
-  }
-  90% {
-    opacity: 0;
-  }
-  92% {
-    opacity: 1;
-  }
-  94% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-@-moz-keyframes glitch-in {
-  0% {
-    opacity: 0;
-  }
-  10% {
-    opacity: 0.8;
-  }
-  15% {
-    opacity: 0;
-  }
-  35% {
-    opacity: 0;
-  }
-  36% {
-    opacity: 1;
-  }
-  38% {
-    opacity: 0;
-  }
-  60% {
-    opacity: 0;
-  }
-  63% {
-    opacity: 0.5;
-  }
-  65% {
-    opacity: 0;
-  }
-  90% {
-    opacity: 0;
-  }
-  92% {
-    opacity: 1;
-  }
-  94% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-@-ms-keyframes glitch-in {
   0% {
     opacity: 0;
   }
@@ -455,30 +233,6 @@
   }
 }
 
-@-moz-keyframes fade-in-out {
-  0% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-
-@-ms-keyframes fade-in-out {
-  0% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-
 @keyframes fade-in-out {
   0% {
     opacity: 0;
@@ -549,12 +303,8 @@ h1, h2, h3, h4, h5, h6, p {
 .overlay .logo {
   background-color: black;
   -webkit-animation: fade-in 1s ease 2.5s 1 reverse;
-  -moz-animation: fade-in 1s ease 2.5s 1 reverse;
-  -ms-animation: fade-in 1s ease 2.5s 1 reverse;
   animation: fade-in 1s ease 2.5s 1 reverse;
   -webkit-animation-fill-mode: forwards;
-  -moz-animation-fill-mode: forwards;
-  -ms-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
 }
 
@@ -573,12 +323,8 @@ h1, h2, h3, h4, h5, h6, p {
 .footer {
   text-align: center;
   -webkit-animation: fade-in 2s ease 1s 1;
-  -moz-animation: fade-in 2s ease 1s 1;
-  -ms-animation: fade-in 2s ease 1s 1;
   animation: fade-in 2s ease 1s 1;
   -webkit-animation-fill-mode: both;
-  -moz-animation-fill-mode: both;
-  -ms-animation-fill-mode: both;
   animation-fill-mode: both;
 }
 
@@ -696,12 +442,8 @@ h1 a {
   border-color: rgba(30, 170, 100, 0.6);
   border-width: 1px 0;
   -webkit-animation: zoom 0.2s ease-out 2s 1;
-  -moz-animation: zoom 0.2s ease-out 2s 1;
-  -ms-animation: zoom 0.2s ease-out 2s 1;
   animation: zoom 0.2s ease-out 2s 1;
   -webkit-animation-fill-mode: both;
-  -moz-animation-fill-mode: both;
-  -ms-animation-fill-mode: both;
   animation-fill-mode: both;
 }
 
@@ -850,12 +592,8 @@ h1 a {
 
 .nav a.mute.active:before {
   -webkit-animation: fade-in 1s alternate-reverse 0s infinite;
-  -moz-animation: fade-in 1s alternate-reverse 0s infinite;
-  -ms-animation: fade-in 1s alternate-reverse 0s infinite;
   animation: fade-in 1s alternate-reverse 0s infinite;
   -webkit-animation-fill-mode: both;
-  -moz-animation-fill-mode: both;
-  -ms-animation-fill-mode: both;
   animation-fill-mode: both;
 }
 
@@ -871,45 +609,29 @@ h1 a {
 
 .nav li:nth-child(4n+0) {
   -webkit-animation: glitch-in 0.3s linear 2s 4;
-  -moz-animation: glitch-in 0.3s linear 2s 4;
-  -ms-animation: glitch-in 0.3s linear 2s 4;
   animation: glitch-in 0.3s linear 2s 4;
   -webkit-animation-fill-mode: both;
-  -moz-animation-fill-mode: both;
-  -ms-animation-fill-mode: both;
   animation-fill-mode: both;
 }
 
 .nav li:nth-child(4n+3) {
   -webkit-animation: glitch-in 0.3s linear 2.2s 3;
-  -moz-animation: glitch-in 0.3s linear 2.2s 3;
-  -ms-animation: glitch-in 0.3s linear 2.2s 3;
   animation: glitch-in 0.3s linear 2.2s 3;
   -webkit-animation-fill-mode: both;
-  -moz-animation-fill-mode: both;
-  -ms-animation-fill-mode: both;
   animation-fill-mode: both;
 }
 
 .nav li:nth-child(4n+1) {
   -webkit-animation: glitch-in 0.3s linear 2.3s 2;
-  -moz-animation: glitch-in 0.3s linear 2.3s 2;
-  -ms-animation: glitch-in 0.3s linear 2.3s 2;
   animation: glitch-in 0.3s linear 2.3s 2;
   -webkit-animation-fill-mode: both;
-  -moz-animation-fill-mode: both;
-  -ms-animation-fill-mode: both;
   animation-fill-mode: both;
 }
 
 .nav li:nth-child(4n+2) {
   -webkit-animation: glitch-in 0.3s linear 2.5s 1;
-  -moz-animation: glitch-in 0.3s linear 2.5s 1;
-  -ms-animation: glitch-in 0.3s linear 2.5s 1;
   animation: glitch-in 0.3s linear 2.5s 1;
   -webkit-animation-fill-mode: both;
-  -moz-animation-fill-mode: both;
-  -ms-animation-fill-mode: both;
   animation-fill-mode: both;
 }
 
@@ -932,12 +654,8 @@ h1 a {
   border: 0 solid white;
   box-sizing: border-box;
   -webkit-animation: tv-zoom2 0.3s ease-in-out 0s 1;
-  -moz-animation: tv-zoom2 0.3s ease-in-out 0s 1;
-  -ms-animation: tv-zoom2 0.3s ease-in-out 0s 1;
   animation: tv-zoom2 0.3s ease-in-out 0s 1;
   -webkit-animation-fill-mode: both;
-  -moz-animation-fill-mode: both;
-  -ms-animation-fill-mode: both;
   animation-fill-mode: both;
 }
 
@@ -951,12 +669,8 @@ h1 a {
   background-color: #ffe7dd;
   border-radius: 3px;
   -webkit-animation: tv-flash 0.3s linear 0s 1;
-  -moz-animation: tv-flash 0.3s linear 0s 1;
-  -ms-animation: tv-flash 0.3s linear 0s 1;
   animation: tv-flash 0.3s linear 0s 1;
   -webkit-animation-fill-mode: both;
-  -moz-animation-fill-mode: both;
-  -ms-animation-fill-mode: both;
   animation-fill-mode: both;
 }
 
@@ -1049,12 +763,8 @@ h1 a {
 .body h2 {
   text-transform: uppercase;
   -webkit-animation: glitch-in 0.4s linear 0s 2;
-  -moz-animation: glitch-in 0.4s linear 0s 2;
-  -ms-animation: glitch-in 0.4s linear 0s 2;
   animation: glitch-in 0.4s linear 0s 2;
   -webkit-animation-fill-mode: both;
-  -moz-animation-fill-mode: both;
-  -ms-animation-fill-mode: both;
   animation-fill-mode: both;
 }
 
@@ -1064,12 +774,8 @@ h1 a {
 
 .body h2 + p {
   -webkit-animation: glitch-in 0.4s linear 0.5s 1;
-  -moz-animation: glitch-in 0.4s linear 0.5s 1;
-  -ms-animation: glitch-in 0.4s linear 0.5s 1;
   animation: glitch-in 0.4s linear 0.5s 1;
   -webkit-animation-fill-mode: both;
-  -moz-animation-fill-mode: both;
-  -ms-animation-fill-mode: both;
   animation-fill-mode: both;
 }
 
@@ -1104,45 +810,29 @@ h1 a {
 
 .body li:nth-child(4n+0) {
   -webkit-animation: glitch-in 0.2s linear 0.5s 3;
-  -moz-animation: glitch-in 0.2s linear 0.5s 3;
-  -ms-animation: glitch-in 0.2s linear 0.5s 3;
   animation: glitch-in 0.2s linear 0.5s 3;
   -webkit-animation-fill-mode: both;
-  -moz-animation-fill-mode: both;
-  -ms-animation-fill-mode: both;
   animation-fill-mode: both;
 }
 
 .body li:nth-child(4n+3) {
   -webkit-animation: glitch-in 0.3s linear 0.7s 2;
-  -moz-animation: glitch-in 0.3s linear 0.7s 2;
-  -ms-animation: glitch-in 0.3s linear 0.7s 2;
   animation: glitch-in 0.3s linear 0.7s 2;
   -webkit-animation-fill-mode: both;
-  -moz-animation-fill-mode: both;
-  -ms-animation-fill-mode: both;
   animation-fill-mode: both;
 }
 
 .body li:nth-child(4n+1) {
   -webkit-animation: glitch-in 0.4s linear 0.6s 1;
-  -moz-animation: glitch-in 0.4s linear 0.6s 1;
-  -ms-animation: glitch-in 0.4s linear 0.6s 1;
   animation: glitch-in 0.4s linear 0.6s 1;
   -webkit-animation-fill-mode: both;
-  -moz-animation-fill-mode: both;
-  -ms-animation-fill-mode: both;
   animation-fill-mode: both;
 }
 
 .body li:nth-child(4n+2) {
   -webkit-animation: glitch-in 0.3s linear 0.9s 1;
-  -moz-animation: glitch-in 0.3s linear 0.9s 1;
-  -ms-animation: glitch-in 0.3s linear 0.9s 1;
   animation: glitch-in 0.3s linear 0.9s 1;
   -webkit-animation-fill-mode: both;
-  -moz-animation-fill-mode: both;
-  -ms-animation-fill-mode: both;
   animation-fill-mode: both;
 }
 
@@ -1205,18 +895,14 @@ h1 a {
   content: " - ";
 }
 
-.body .tracklist li.playing:after {
+.body .tracklist .playing:after {
   content: "\25B6";
   font-size: 12px;
   color: #e54;
   text-shadow: 0 0 10px #ee5544;
   -webkit-animation: fade-in 1s alternate-reverse 0s infinite;
-  -moz-animation: fade-in 1s alternate-reverse 0s infinite;
-  -ms-animation: fade-in 1s alternate-reverse 0s infinite;
   animation: fade-in 1s alternate-reverse 0s infinite;
   -webkit-animation-fill-mode: both;
-  -moz-animation-fill-mode: both;
-  -ms-animation-fill-mode: both;
   animation-fill-mode: both;
 }
 
@@ -1264,7 +950,7 @@ h1 a {
   box-shadow: 0 0 10px #aa281e;
 }
 
-.about li p.pre {
+.about li .pre {
   font-size: 120%;
   margin-top: 1em;
   margin-left: -50px;
