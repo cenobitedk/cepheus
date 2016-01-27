@@ -37,21 +37,21 @@ function toggleClass (el, className, force) {
 }
 
 function resizePlayer () {
-  var width, height, player = document.getElementById('player');
+  var width, height, playerEl = document.getElementById('player');
   if (mobile) {
-    width = player.offsetWidth;
+    width = playerEl.offsetWidth;
     height = Math.round(width / (16/9));
-    player.setAttribute('height', height + 'px');
+    playerEl.setAttribute('height', height + 'px');
   }
   else {
-    height = player.offsetHeight;
+    height = playerEl.offsetHeight;
     width = Math.round(height * (16/9));
-    var parentWidth = player.parentElement.offsetWidth;
+    var parentWidth = playerEl.parentElement.offsetWidth;
     var newWidth = Math.round((width * 100) / parentWidth + 10);
     var newLeft = (newWidth - 100) / -2;
 
-    player.style.width = newWidth + '%';
-    player.style.left = newLeft + '%';
+    playerEl.style.width = newWidth + '%';
+    playerEl.style.left = newLeft + '%';
   }
 }
 
