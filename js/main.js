@@ -1,9 +1,8 @@
 
 var mobile = (document.querySelector('body.desktop') === null);
 var mutebtn = document.querySelector('a.mute');
-var YT = window.YT;
-var SC = window.SC;
-var SCwidget = null;
+var YT = window.YT, player, done = false;
+var SC = window.SC, SCwidget = null;
 var picturefill = window.picturefill;
 
 /**
@@ -38,21 +37,21 @@ function toggleClass (el, className, force) {
 }
 
 function resizePlayer () {
-  var width, height, player = document.getElementById('player');
+  var width, height, playerEl = document.getElementById('player');
   if (mobile) {
-    width = player.offsetWidth;
+    width = playerEl.offsetWidth;
     height = Math.round(width / (16/9));
-    player.setAttribute('height', height + 'px');
+    playerEl.setAttribute('height', height + 'px');
   }
   else {
-    height = player.offsetHeight;
+    height = playerEl.offsetHeight;
     width = Math.round(height * (16/9));
-    var parentWidth = player.parentElement.offsetWidth;
+    var parentWidth = playerEl.parentElement.offsetWidth;
     var newWidth = Math.round((width * 100) / parentWidth + 10);
     var newLeft = (newWidth - 100) / -2;
 
-    player.style.width = newWidth + '%';
-    player.style.left = newLeft + '%';
+    playerEl.style.width = newWidth + '%';
+    playerEl.style.left = newLeft + '%';
   }
 }
 
@@ -92,7 +91,6 @@ firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
 // 3. This function loads an <iframe> (and YouTube player)
 //    after the API code downloads.
-var player, done = false;
 function onYouTubeIframeAPIReady () {
   window.addEventListener('resize', function() {
     setTimeout(resizePlayer, 15);
