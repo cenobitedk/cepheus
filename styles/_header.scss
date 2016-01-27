@@ -8,6 +8,7 @@ h1 {
     padding-top: 70px;
     padding-left: 1em;
     padding-bottom: 0.5em;
+    direction: ltr;
     text-indent: -9999px;
     background-repeat: no-repeat;
     background-position: center 70%;
@@ -34,7 +35,6 @@ h1 {
 }
 
 .lead {
-  font-size: 15px;
   font-weight: 100;
   font-family: "DOT2";
   font-family: "Apple II", "Lucida Console", Monaco, monospace;

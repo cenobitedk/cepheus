@@ -1,22 +1,23 @@
 (function() {
   var menu = document.querySelector('.nav');
   var toggle = menu.querySelector('.toggle span');
+  var toggleClass = window.toggleClass;
+  var open = false, delay = 1;
 
-  menu.addEventListener('tap', eventHandler);
-
-  var open = false, del = 1;
   function eventHandler(event) {
     event.preventDefault();
 
     if (event.target === toggle) {
       open = !open;
-      del = 1;
+      delay = 1;
     } else {
       open = false;
-      del = 150;
+      delay = 150;
     }
-    setTimeout(toggleClass, del, menu, 'expand', open);
+    setTimeout(toggleClass, delay, menu, 'expand', open);
 
     return false;
   };
+
+  menu.addEventListener('tap', eventHandler);
 }());

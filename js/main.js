@@ -1,8 +1,43 @@
 
 var mobile = (document.querySelector('body.desktop') === null);
 var mutebtn = document.querySelector('a.mute');
+var YT = window.YT;
+var SC = window.SC;
+var SCwidget = null;
+var picturefill = window.picturefill;
 
-function resizePlayer (event) {
+/**
+ * UTILITIES
+ */
+function hasClass (el, className) {
+  return (el.className.indexOf(className) > -1);
+}
+
+function addClass (el, className) {
+  var arr = el.className.split(' ');
+  if (!hasClass.apply(window, arguments)) {
+    arr.push(className);
+  }
+  el.className = arr.join(' ');
+}
+
+function removeClass (el, className) {
+  var arr = el.className.split(' ');
+  var i = arr.indexOf(className);
+  if (hasClass.apply(window, arguments)) {
+    arr.splice(i, 1);
+  }
+  el.className = arr.join(' ');
+}
+
+function toggleClass (el, className, force) {
+  if (typeof force === 'undefined') {
+    force = !(hasClass.apply(window, arguments));
+  }
+  return (force) ? addClass.apply(window, arguments) : removeClass.apply(window, arguments);
+}
+
+function resizePlayer () {
   var width, height, player = document.getElementById('player');
   if (mobile) {
     width = player.offsetWidth;
@@ -20,6 +55,34 @@ function resizePlayer (event) {
     player.style.left = newLeft + '%';
   }
 }
+
+function toggleMute (el, force) {
+  if (typeof el === 'undefined') {
+    el = mutebtn;
+  }
+  if (typeof force === 'undefined') {
+    force = !player.isMuted();
+  }
+  if (document.querySelector('#player') === null) {
+    return;
+  }
+  else if (force === false) {
+    player.unMute();
+    toggleClass(el, 'active', false);
+    if (SCwidget !== null) {
+      SCwidget.pause();
+    }
+  }
+  else if (force === true) {
+    player.mute();
+    toggleClass(el, 'active', true);
+  }
+  return force;
+}
+
+/**
+ * Youtube Player
+ */
 
 // 2. This code loads the IFrame Player API code asynchronously.
 var tag = document.createElement('script');
@@ -52,55 +115,7 @@ function onYouTubeIframeAPIReady () {
   });
 }
 
-function toggleMute (el, force) {
-  if (typeof el === 'undefined') {
-    el = mutebtn;
-  }
-  if (typeof force === 'undefined') {
-    force = !player.isMuted();
-  }
-  if (document.querySelector('#player') === null) {
-    return;
-  }
-  else if (force === false) {
-    player.unMute();
-    toggleClass(el, 'active', false);
-    if (SCwidget !== null) SCwidget.pause();
-  }
-  else if (force === true) {
-    player.mute();
-    toggleClass(el, 'active', true);
-  }
-  return force;
-}
 
-function hasClass (el, className) {
-  return (el.className.indexOf(className) > -1);
-}
-
-function addClass (el, className) {
-  var arr = el.className.split(' ');
-  if (!hasClass.apply(window, arguments)) {
-    arr.push(className);
-  }
-  el.className = arr.join(' ');
-}
-
-function removeClass (el, className) {
-  var arr = el.className.split(' ');
-  var i = arr.indexOf(className);
-  if (hasClass.apply(window, arguments)) {
-    arr.splice(i, 1);
-  }
-  el.className = arr.join(' ');
-}
-
-function toggleClass (el, className, force) {
-  if (typeof force === 'undefined') {
-    force = !(hasClass.apply(window, arguments));
-  }
-  return (force) ? addClass.apply(window, arguments) : removeClass.apply(window, arguments);
-}
 
 var timer, playlist;
 function markPlayingTrack () {
@@ -177,10 +192,8 @@ function ajaxOembed (el) {
   }, delay);
 }
 
-var SCwidget = null;
 var SClastEvent;
 function attachSC (el) {
-  var mutebtn = document.querySelector('a.mute');
   SCwidget = SC.Widget(el);
   SCwidget.bind(SC.Widget.Events.READY, function() {
     SCwidget.bind(SC.Widget.Events.PLAY, function() {

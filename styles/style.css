@@ -303,8 +303,10 @@ h1, h2, h3, h4, h5, h6, p {
 .overlay .logo {
   background-color: black;
   -webkit-animation: fade-in 1s ease 2.5s 1 reverse;
+  -moz-animation: fade-in 1s ease 2.5s 1 reverse;
   animation: fade-in 1s ease 2.5s 1 reverse;
   -webkit-animation-fill-mode: forwards;
+  -moz-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
 }
 
@@ -323,8 +325,10 @@ h1, h2, h3, h4, h5, h6, p {
 .footer {
   text-align: center;
   -webkit-animation: fade-in 2s ease 1s 1;
+  -moz-animation: fade-in 2s ease 1s 1;
   animation: fade-in 2s ease 1s 1;
   -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
   animation-fill-mode: both;
 }
 
@@ -364,6 +368,7 @@ h1 a {
   padding-top: 70px;
   padding-left: 1em;
   padding-bottom: 0.5em;
+  direction: ltr;
   text-indent: -9999px;
   background-repeat: no-repeat;
   background-position: center 70%;
@@ -391,7 +396,6 @@ h1 a {
 }
 
 .lead {
-  font-size: 15px;
   font-weight: 100;
   font-family: "DOT2";
   font-family: "Apple II", "Lucida Console", Monaco, monospace;
@@ -442,8 +446,10 @@ h1 a {
   border-color: rgba(30, 170, 100, 0.6);
   border-width: 1px 0;
   -webkit-animation: zoom 0.2s ease-out 2s 1;
+  -moz-animation: zoom 0.2s ease-out 2s 1;
   animation: zoom 0.2s ease-out 2s 1;
   -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
   animation-fill-mode: both;
 }
 
@@ -550,7 +556,6 @@ h1 a {
   position: relative;
   -webkit-transition: all 0.2s;
   -moz-transition: all 0.2s;
-  -ms-transition: all 0.2s;
   transition: all 0.2s;
   margin: 0 -9px;
 }
@@ -592,8 +597,10 @@ h1 a {
 
 .nav a.mute.active:before {
   -webkit-animation: fade-in 1s alternate-reverse 0s infinite;
+  -moz-animation: fade-in 1s alternate-reverse 0s infinite;
   animation: fade-in 1s alternate-reverse 0s infinite;
   -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
   animation-fill-mode: both;
 }
 
@@ -609,29 +616,37 @@ h1 a {
 
 .nav li:nth-child(4n+0) {
   -webkit-animation: glitch-in 0.3s linear 2s 4;
+  -moz-animation: glitch-in 0.3s linear 2s 4;
   animation: glitch-in 0.3s linear 2s 4;
   -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
   animation-fill-mode: both;
 }
 
 .nav li:nth-child(4n+3) {
   -webkit-animation: glitch-in 0.3s linear 2.2s 3;
+  -moz-animation: glitch-in 0.3s linear 2.2s 3;
   animation: glitch-in 0.3s linear 2.2s 3;
   -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
   animation-fill-mode: both;
 }
 
 .nav li:nth-child(4n+1) {
   -webkit-animation: glitch-in 0.3s linear 2.3s 2;
+  -moz-animation: glitch-in 0.3s linear 2.3s 2;
   animation: glitch-in 0.3s linear 2.3s 2;
   -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
   animation-fill-mode: both;
 }
 
 .nav li:nth-child(4n+2) {
   -webkit-animation: glitch-in 0.3s linear 2.5s 1;
+  -moz-animation: glitch-in 0.3s linear 2.5s 1;
   animation: glitch-in 0.3s linear 2.5s 1;
   -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
   animation-fill-mode: both;
 }
 
@@ -654,8 +669,10 @@ h1 a {
   border: 0 solid white;
   box-sizing: border-box;
   -webkit-animation: tv-zoom2 0.3s ease-in-out 0s 1;
+  -moz-animation: tv-zoom2 0.3s ease-in-out 0s 1;
   animation: tv-zoom2 0.3s ease-in-out 0s 1;
   -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
   animation-fill-mode: both;
 }
 
@@ -669,8 +686,10 @@ h1 a {
   background-color: #ffe7dd;
   border-radius: 3px;
   -webkit-animation: tv-flash 0.3s linear 0s 1;
+  -moz-animation: tv-flash 0.3s linear 0s 1;
   animation: tv-flash 0.3s linear 0s 1;
   -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
   animation-fill-mode: both;
 }
 
@@ -695,7 +714,6 @@ h1 a {
   margin: auto;
   -webkit-transition: all 0.5s ease-in-out;
   -moz-transition: all 0.5s ease-in-out;
-  -ms-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
 }
 
@@ -733,7 +751,6 @@ h1 a {
   box-shadow: 0 0 40px 10px rgba(0, 0, 0, 0.8) inset;
   -webkit-transition: all 0.5s ease-in-out;
   -moz-transition: all 0.5s ease-in-out;
-  -ms-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
 }
 
@@ -748,7 +765,6 @@ h1 a {
   background-color: rgba(40, 20, 20, 0.7);
   -webkit-transition: all 0.5s ease-in-out;
   -moz-transition: all 0.5s ease-in-out;
-  -ms-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
 }
 
@@ -763,8 +779,10 @@ h1 a {
 .body h2 {
   text-transform: uppercase;
   -webkit-animation: glitch-in 0.4s linear 0s 2;
+  -moz-animation: glitch-in 0.4s linear 0s 2;
   animation: glitch-in 0.4s linear 0s 2;
   -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
   animation-fill-mode: both;
 }
 
@@ -774,8 +792,10 @@ h1 a {
 
 .body h2 + p {
   -webkit-animation: glitch-in 0.4s linear 0.5s 1;
+  -moz-animation: glitch-in 0.4s linear 0.5s 1;
   animation: glitch-in 0.4s linear 0.5s 1;
   -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
   animation-fill-mode: both;
 }
 
@@ -810,29 +830,37 @@ h1 a {
 
 .body li:nth-child(4n+0) {
   -webkit-animation: glitch-in 0.2s linear 0.5s 3;
+  -moz-animation: glitch-in 0.2s linear 0.5s 3;
   animation: glitch-in 0.2s linear 0.5s 3;
   -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
   animation-fill-mode: both;
 }
 
 .body li:nth-child(4n+3) {
   -webkit-animation: glitch-in 0.3s linear 0.7s 2;
+  -moz-animation: glitch-in 0.3s linear 0.7s 2;
   animation: glitch-in 0.3s linear 0.7s 2;
   -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
   animation-fill-mode: both;
 }
 
 .body li:nth-child(4n+1) {
   -webkit-animation: glitch-in 0.4s linear 0.6s 1;
+  -moz-animation: glitch-in 0.4s linear 0.6s 1;
   animation: glitch-in 0.4s linear 0.6s 1;
   -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
   animation-fill-mode: both;
 }
 
 .body li:nth-child(4n+2) {
   -webkit-animation: glitch-in 0.3s linear 0.9s 1;
+  -moz-animation: glitch-in 0.3s linear 0.9s 1;
   animation: glitch-in 0.3s linear 0.9s 1;
   -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
   animation-fill-mode: both;
 }
 
@@ -901,8 +929,10 @@ h1 a {
   color: #e54;
   text-shadow: 0 0 10px #ee5544;
   -webkit-animation: fade-in 1s alternate-reverse 0s infinite;
+  -moz-animation: fade-in 1s alternate-reverse 0s infinite;
   animation: fade-in 1s alternate-reverse 0s infinite;
   -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
   animation-fill-mode: both;
 }
 

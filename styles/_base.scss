@@ -57,8 +57,10 @@ h1, h2, h3, h4, h5, h6, p {
   .logo {
     background-color: black;
     -webkit-animation: fade-in 1s ease 2.5s 1 reverse;
+    -moz-animation: fade-in 1s ease 2.5s 1 reverse;
     animation:  fade-in 1s ease 2.5s 1 reverse;
     -webkit-animation-fill-mode: forwards;
+    -moz-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
 
     img {
@@ -79,8 +81,10 @@ h1, h2, h3, h4, h5, h6, p {
 .footer {
   text-align: center;
   -webkit-animation: fade-in 2s ease 1s 1;
+  -moz-animation: fade-in 2s ease 1s 1;
   animation: fade-in 2s ease 1s 1;
   -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
   animation-fill-mode: both;
 }
 
