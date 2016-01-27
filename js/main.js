@@ -1,9 +1,8 @@
 
 var mobile = (document.querySelector('body.desktop') === null);
 var mutebtn = document.querySelector('a.mute');
-var YT = window.YT;
-var SC = window.SC;
-var SCwidget = null;
+var YT = window.YT, player, done = false;
+var SC = window.SC, SCwidget = null;
 var picturefill = window.picturefill;
 
 /**
@@ -92,7 +91,6 @@ firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
 // 3. This function loads an <iframe> (and YouTube player)
 //    after the API code downloads.
-var player, done = false;
 function onYouTubeIframeAPIReady () {
   window.addEventListener('resize', function() {
     setTimeout(resizePlayer, 15);
