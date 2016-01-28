@@ -62,11 +62,12 @@ if ($detect->isMobile()) {
       <div class="header">
         <h1><a href="/">DYNATRON</a></h1>
         <p class="lead">Electronic Synth inspired by 80's atmosphere</p>
+        <?php require('nav.php'); ?>
       </div>
       <div class="body">
       </div>
       <div class="footer">
-        <?php require('nav.php'); ?>
+
         <p class="copyright">&copy;2015 DYNATRONSYNTH.COM</p>
       </div>
     </div>

@@ -1,8 +1,15 @@
+.scroll {
+  white-space: nowrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+}
 
 .nav {
   /*background-color: #062606;*/
   background-color: #111;
   background-color: rgba(20, 20, 20, 0.6);
+  background-color: rgba(20, 70, 20, 0.6);
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
   border: 1px solid #0a442a;
   border-color: rgba(30, 170, 100, 0.6);
@@ -10,15 +17,169 @@
   -webkit-animation: zoom 0.2s ease-out 2s 1;
   -moz-animation: zoom 0.2s ease-out 2s 1;
   animation: zoom 0.2s ease-out 2s 1;
-  -webkit-animation-fill-mode: both;
-  -moz-animation-fill-mode: both;
-  animation-fill-mode: both;
+  -webkit-animation-fill-mode: backwards;
+  -moz-animation-fill-mode: backwards;
+  animation-fill-mode: backwards;
+
+  max-width: 700px;
+  margin: 10px auto 0;
+  overflow: visible;
+  border-radius: 10px;
+  box-sizing: border-box;
+
+  li {
+    display: inline-block;
+    list-style-type: none;
+
+    a {
+      &:hover,
+      &:focus {
+        color: #25d585;
+        text-shadow: 0 0 6px rgba(30, 170, 100, 1), 0 0 12px rgba(30, 170, 100, 0.7);
+      }
+
+      &:before {
+        content: "\00B7";
+        margin: 0 5px 0 0;
+      }
+    }
+
+    &:nth-child(4n+0) {
+      -webkit-animation: glitch-in 0.3s linear 2s 4;
+      -moz-animation: glitch-in 0.3s linear 2s 4;
+      animation: glitch-in 0.3s linear 2s 4;
+      -webkit-animation-fill-mode: both;
+      -moz-animation-fill-mode: both;
+      animation-fill-mode: both;
+    }
+    &:nth-child(4n+1) {
+      -webkit-animation: glitch-in 0.3s linear 2.3s 2;
+      -moz-animation: glitch-in 0.3s linear 2.3s 2;
+      animation: glitch-in 0.3s linear 2.3s 2;
+      -webkit-animation-fill-mode: both;
+      -moz-animation-fill-mode: both;
+      animation-fill-mode: both;
+    }
+    &:nth-child(4n+2) {
+      -webkit-animation: glitch-in 0.3s linear 2.5s 1;
+      -moz-animation: glitch-in 0.3s linear 2.5s 1;
+      animation: glitch-in 0.3s linear 2.5s 1;
+      -webkit-animation-fill-mode: both;
+      -moz-animation-fill-mode: both;
+      animation-fill-mode: both;
+    }
+    &:nth-child(4n+3) {
+      -webkit-animation: glitch-in 0.3s linear 2.2s 3;
+      -moz-animation: glitch-in 0.3s linear 2.2s 3;
+      animation: glitch-in 0.3s linear 2.2s 3;
+      -webkit-animation-fill-mode: both;
+      -moz-animation-fill-mode: both;
+      animation-fill-mode: both;
+    }
+  }
+
+  .dropdown {
+    position: relative;
+
+    > a:after {
+      // content: "\2193";
+      content: url(/img/arrowDown.svg);
+      margin-left: 5px;
+      transition-duration: 0.5s;
+      transition-delay: 0.3s;
+      position: relative;
+      top: 0;
+    }
+    &:hover > a:after,
+    > a:focus:after {
+      opacity: 0;
+      transition-delay: 0s;
+      top: 5px;
+    }
+
+    &:hover .menu,
+    > a:focus + .menu {
+      opacity: 1;
+
+
+      li {
+        opacity: 1;
+        margin-top: 0;
+      }
+    }
+  }
+
+  .menu {
+    opacity: 0;
+    position: absolute;
+    top: 100%;
+    background-color: rgba(20, 70, 20, 0.6);
+    border: 1px solid #0a442a;
+    border-color: rgba(30, 170, 100, 0.6);
+    border-width: 0 1px;
+    text-align: left;
+    margin-left: -1px;
+    -webkit-transition: all 0.3s ease 0.1s;
+    -moz-transition: all 0.3s ease 0.1s;
+    transition: all 0.3s ease 0.1s;
+    counter-reset: item;
+    border-radius: 0 0 10px 10px;
+    overflow: hidden;
+
+    li {
+      opacity: 0;
+      counter-increment: item;
+      -webkit-animation: none 0 ease;
+      -moz-animation: none 0 ease;
+      animation: none 0 ease;
+      animation-fill-mode: none;
+
+      transition: all 0.1s linear 0s, opacity 0.4s linear 0.1s;
+      display: block;
+
+      margin-top: -25px;
+      margin-right: 10px;
+
+      &:first-child {
+        padding-top: 5px;
+      }
+      &:last-child {
+        padding-bottom: 5px;
+      }
+
+      &:nth-child(1) {
+        -webkit-transition-delay: 0.1s;
+        -moz-transition-delay: 0.1s;
+        transition-delay: 0.1s;
+      }
+      &:nth-child(2) {
+        -webkit-transition-delay: 0.15s;
+        -moz-transition-delay: 0.15s;
+        transition-delay: 0.15s;
+      }
+      &:nth-child(3) {
+        -webkit-transition-delay: 0.2s;
+        -moz-transition-delay: 0.2s;
+        transition-delay: 0.2s;
+      }
+      &:nth-child(4) {
+        -webkit-transition-delay: 0.25s;
+        -moz-transition-delay: 0.25s;
+        transition-delay: 0.25s;
+      }
+      &:nth-child(5) {
+        -webkit-transition-delay: 0.3s;
+        -moz-transition-delay: 0.3s;
+        transition-delay: 0.3s;
+      }
+    }
+  }
 
   .mobile &,
   .desktop & {
-    display: inline-block;
-    border-radius: 30px;
-    border-width: 1px;
+    display: block;
+    // border-radius: 30px;
+    // border-width: 1px;
   }
 
   .mobile & {
@@ -92,19 +253,19 @@
 
   .desktop & {
     ul {
-      font-size: 0;
-      padding: 5px 20px;
-      display: block;
+      // font-size: 0;
+      // padding: 5px 20px;
+      // display: inline-block;
     }
 
     li {
-      margin: 5px 0;
-      display: inline-block;
+      // margin: 5px 0;
+      // display: inline-block;
     }
 
     .upper {
-      border-bottom: 1px solid #0a442a;
-      border-color: rgba(30, 170, 100, 0.6);
+      // border-bottom: 1px solid #0a442a;
+      // border-color: rgba(30, 170, 100, 0.6);
     }
   }
 
@@ -116,12 +277,13 @@
     text-transform: uppercase;
     letter-spacing: -1px;
     color: #15b565;
-    display: block;
+    display: inline-block;
     position: relative;
     -webkit-transition: all 0.2s;
     -moz-transition: all 0.2s;
     transition: all 0.2s;
-    margin: 0 -9px;
+    // margin: 0 -9px;
+    padding: 5px;
 
     &:hover,
     &:active,
@@ -148,7 +310,7 @@
     &.mute {
       color: #0b5c33;
       color: rgba(20, 180, 100, 0.5);
-      margin-left: 2px;
+
 
       .mobile & {
         display: none;
@@ -159,6 +321,7 @@
         font-weight: bold;
         font-size: 200%;
         vertical-align: middle;
+        line-height: 0;
       }
 
       &.active {
@@ -171,55 +334,6 @@
           animation-fill-mode: both;
         }
       }
-    }
-  }
-
-  li {
-    a {
-      &:hover,
-      &:focus {
-        color: #25d585;
-        text-shadow: 0 0 6px rgba(30, 170, 100, 1), 0 0 12px rgba(30, 170, 100, 0.7);
-      }
-
-      &:before,
-      &:after {
-        content: "\00B7";
-        margin: 0 5px;
-      }
-    }
-
-    &:nth-child(4n+0) {
-      -webkit-animation: glitch-in 0.3s linear 2s 4;
-      -moz-animation: glitch-in 0.3s linear 2s 4;
-      animation: glitch-in 0.3s linear 2s 4;
-      -webkit-animation-fill-mode: both;
-      -moz-animation-fill-mode: both;
-      animation-fill-mode: both;
-    }
-    &:nth-child(4n+3) {
-      -webkit-animation: glitch-in 0.3s linear 2.2s 3;
-      -moz-animation: glitch-in 0.3s linear 2.2s 3;
-      animation: glitch-in 0.3s linear 2.2s 3;
-      -webkit-animation-fill-mode: both;
-      -moz-animation-fill-mode: both;
-      animation-fill-mode: both;
-    }
-    &:nth-child(4n+1) {
-      -webkit-animation: glitch-in 0.3s linear 2.3s 2;
-      -moz-animation: glitch-in 0.3s linear 2.3s 2;
-      animation: glitch-in 0.3s linear 2.3s 2;
-      -webkit-animation-fill-mode: both;
-      -moz-animation-fill-mode: both;
-      animation-fill-mode: both;
-    }
-    &:nth-child(4n+2) {
-      -webkit-animation: glitch-in 0.3s linear 2.5s 1;
-      -moz-animation: glitch-in 0.3s linear 2.5s 1;
-      animation: glitch-in 0.3s linear 2.5s 1;
-      -webkit-animation-fill-mode: both;
-      -moz-animation-fill-mode: both;
-      animation-fill-mode: both;
     }
   }
 }
