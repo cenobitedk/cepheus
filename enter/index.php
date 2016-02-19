@@ -46,6 +46,10 @@
     <!--STYLES-->
     <!-- <link rel="stylesheet" href="/styles/style.min.css"> -->
     <style>
+      html {
+        margin: 0;
+        padding: 0;
+      }
       body {
         background-color: #222;
         color: #eee;
@@ -63,8 +67,13 @@
         border: 1px solid #e32;
         border-width: 1px 0;
         padding: 0.3em;
+        margin-top: 10px;
+        text-transform: uppercase;
       }
-
+      .lead,
+      .sub {
+        font-size: 14px;
+      }
       ul {
         padding: 0;
       }
@@ -92,7 +101,17 @@
         background-position-x: -1px;
         background-position-y: -1px;
         vertical-align: middle;
-        margin-right: 0.5em;
+        margin-right: 10px;
+      }
+      a:after {
+        content: attr(href);
+        color: #666;
+        font-size: 10px;
+        float: left;
+        clear: left;
+        margin-left: 66px;
+        line-height: 0;
+        margin-top: -12px;
       }
       .fb:before {
         background-position-y: -57px;
@@ -124,7 +143,7 @@
 
   <body class="desktop">
 
-    <h1>Welcome!</h1>
+    <h1>Welcome</h1>
     <p class="lead">Where do you want to go?</p>
 
     <ul>
