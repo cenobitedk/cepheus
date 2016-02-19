@@ -18,6 +18,22 @@ if ($detect->isMobile()) {
 <html>
   <head>
     <title>Dynatron</title>
+    <meta name="description" content="Dynatron plays electronic synth music inspired by 80's atmosphere." />
+    <meta property="og:title" content="Home" />
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content="Dynatron plays electronic synth music inspired by 80's atmosphere." />
+    <meta property="og:url" content="http://dynatronsynth.com/enter" />
+    <meta property="og:locale" content="en-US" />
+    <meta property="og:site_name" content="DYNATRON" />
+    <meta property="og:image" content="http://dynatronsynth.com/img/og-image.jpg" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@DynatronSynth" />
+    <meta name="twitter:title" content="DYNATRON" />
+    <meta name="twitter:description" content="Dynatron plays electronic synth music inspired by 80's atmosphere." />
+    <meta name="twitter:image" content="http://dynatronsynth.com/img/og-image.jpg" />
 
     <!-- Viewport mobile tag for sensible mobile support -->
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=2">
