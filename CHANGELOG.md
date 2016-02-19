@@ -1,5 +1,10 @@
 #CHANGELOG
 
+## [1.8.0](https://github.com/cenobitedk/cepheus/releases/tag/v1.8.0) - 2016-02-19
+- `Added` Jump page, `/enter`.
+- `Added` Updated homepage (desktop) with metadata (opengraph etc.).
+- `Fixes` Various codestyle changes.
+
 ## [1.7.0](https://github.com/cenobitedk/cepheus/releases/tag/v1.7.0) - 2016-01-27
 - `Changed` Updated "about" page in regards the **Aeternus** release.
 - `Added` changelog.
