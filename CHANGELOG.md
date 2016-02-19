@@ -1,5 +1,8 @@
 #CHANGELOG
 
+## [1.8.2](https://github.com/cenobitedk/cepheus/releases/tag/v1.8.2) - 2016-02-19
+- `Fixed` metadata locale and url bug.
+
 ## [1.8.1](https://github.com/cenobitedk/cepheus/releases/tag/v1.8.1) - 2016-02-19
 - `Fixed` Continues intro gif animation bug in Safari.
 
