@@ -19,7 +19,7 @@ if ($detect->isMobile()) {
   <head>
     <title>Dynatron</title>
     <meta name="description" content="Dynatron plays electronic synth music inspired by 80's atmosphere." />
-    <meta property="og:title" content="Home" />
+    <meta property="og:title" content="DYNATRON" />
     <meta property="og:type" content="website" />
     <meta property="og:description" content="Dynatron plays electronic synth music inspired by 80's atmosphere." />
     <meta property="og:url" content="http://dynatronsynth.com" />
