@@ -1,5 +1,8 @@
 #CHANGELOG
 
+## [1.9.0](https://github.com/cenobitedk/cepheus/releases/tag/v1.9.0) - 2016-02-19
+- `Added` missing metadata for mobile.
+
 ## [1.8.2](https://github.com/cenobitedk/cepheus/releases/tag/v1.8.2) - 2016-02-19
 - `Fixed` metadata locale and url bug.
 
