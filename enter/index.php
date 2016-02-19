@@ -8,8 +8,8 @@
     <meta property="og:title" content="Jump page" />
     <meta property="og:type" content="website" />
     <meta property="og:description" content="Enter the jump page. Dynatron plays electronic synth music inspired by 80's atmosphere." />
-    <meta property="og:url" content="http://dynatronsynth.com/enter" />
-    <meta property="og:locale" content="en-US" />
+    <meta property="og:url" content="http://dynatronsynth.com/enter/" />
+    <meta property="og:locale" content="en_US" />
     <meta property="og:site_name" content="DYNATRON" />
     <meta property="og:image" content="http://dynatronsynth.com/img/og-image.jpg" />
     <meta property="og:image:type" content="image/jpeg" />
