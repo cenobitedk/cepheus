@@ -1,19 +1,6 @@
 <?php
-/**
- * Include and instantiate the class.
- */
-require_once 'lib/Mobile-Detect-2.8.12/Mobile_Detect.php';
-$detect = new Mobile_Detect;
-
-// Any mobile device (phones or tablets).
-if ($detect->isMobile()) {
-  header('Location: /m/');
-  die();
-}
-
+require_once('./detect.php');
 ?>
-
-
 <!DOCTYPE html>
 <html>
   <head>
