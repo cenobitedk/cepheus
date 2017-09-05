@@ -1,12 +1,26 @@
 #CHANGELOG
 
+## [1.9.0](https://github.com/cenobitedk/cepheus/releases/tag/v1.9.0) - 2016-02-19
+- `Added` missing metadata for mobile.
+
+## [1.8.2](https://github.com/cenobitedk/cepheus/releases/tag/v1.8.2) - 2016-02-19
+- `Fixed` metadata locale and url bug.
+
+## [1.8.1](https://github.com/cenobitedk/cepheus/releases/tag/v1.8.1) - 2016-02-19
+- `Fixed` Continues intro gif animation bug in Safari.
+
+## [1.8.0](https://github.com/cenobitedk/cepheus/releases/tag/v1.8.0) - 2016-02-19
+- `Added` Jump page, `/enter`.
+- `Added` Updated homepage (desktop) with metadata (opengraph etc.).
+- `Fixed` Various codestyle changes.
+
 ## [1.7.0](https://github.com/cenobitedk/cepheus/releases/tag/v1.7.0) - 2016-01-27
 - `Changed` Updated "about" page in regards the **Aeternus** release.
 - `Added` changelog.
 
 ## [1.6.3](https://github.com/cenobitedk/cepheus/releases/tag/v1.6.3) - 2016-01-27
 - `Added` Favicons for various platforms.
-- `Fixes` Small bugfixes and improvements:
+- `Fixed` Small bugfixes and improvements:
 	- Removed unintended scrollbars.  
   	- Icons folder location, [Default Apache icons directory problem](http://www.electrictoolbox.com/apache-icons-directory/).  
   	- Codestyle fixes, [report](https://www.codacy.com/app/j-hasseriis/cepheus/commit?bid=3085146&cid=26038038).  
