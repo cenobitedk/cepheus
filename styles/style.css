@@ -851,6 +851,10 @@ h1 a {
   animation-fill-mode: both;
 }
 
+.mobile .body .container {
+  padding: 0.5em;
+}
+
 .body img {
   width: 100%;
   height: auto;
@@ -863,33 +867,19 @@ h1 a {
   position: relative;
   font-size: 0;
   line-height: 0;
-  box-shadow: 0 0 30px rgba(170, 65, 50, 0.6);
   border-radius: 6px;
   overflow: hidden;
   width: 100%;
   height: auto;
   max-width: 500px;
   margin: auto;
-  -webkit-transition: all 0.5s ease-in-out;
-  -moz-transition: all 0.5s ease-in-out;
-  transition: all 0.5s ease-in-out;
+  margin-bottom: 1em;
 }
 
 .img-wrap:before {
   content: " ";
   display: block;
   padding-top: 100%;
-}
-
-.img-wrap:after {
-  content: " ";
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  background-color: rgba(200, 100, 100, 0.1);
 }
 
 .img-banner {
@@ -922,6 +912,12 @@ h1 a {
 
 .mobile .img-banner {
   padding: 0;
+  margin-left: -0.5em;
+  margin-right: -0.5em;
+}
+
+.body .img-wrap + h2 {
+  margin-top: 1em;
 }
 
 .body h2 {

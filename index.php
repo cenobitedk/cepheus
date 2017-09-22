@@ -70,7 +70,7 @@ require_once('./detect.php');
       </div>
       <div class="footer">
 
-        <p class="copyright">&copy;2015 DYNATRONSYNTH.COM</p>
+        <p class="copyright">&copy;2012–<?php echo date("Y"); ?> DYNATRON</p>
       </div>
     </div>
     <!--SCRIPTS-->
