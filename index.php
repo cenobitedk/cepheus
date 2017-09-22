@@ -1,19 +1,6 @@
 <?php
-/**
- * Include and instantiate the class.
- */
-require_once 'lib/Mobile-Detect-2.8.12/Mobile_Detect.php';
-$detect = new Mobile_Detect;
-
-// Any mobile device (phones or tablets).
-if ($detect->isMobile()) {
-  header('Location: /m/');
-  die();
-}
-
+require_once('./detect.php');
 ?>
-
-
 <!DOCTYPE html>
 <html>
   <head>
@@ -77,12 +64,12 @@ if ($detect->isMobile()) {
     <div class="wrapper">
       <div class="header">
         <h1><a href="/">DYNATRON</a></h1>
-        <p class="lead">Electronic Synth inspired by 80's atmosphere</p>
+        <?php require('nav.php'); ?>
       </div>
       <div class="body">
       </div>
       <div class="footer">
-        <?php require('nav.php'); ?>
+
         <p class="copyright">&copy;2015 DYNATRONSYNTH.COM</p>
       </div>
     </div>

@@ -77,16 +77,29 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 
-.header,
+//.header,
 .body,
 .footer {
   text-align: center;
   -webkit-animation: fade-in 2s ease 1s 1;
   -moz-animation: fade-in 2s ease 1s 1;
   animation: fade-in 2s ease 1s 1;
-  -webkit-animation-fill-mode: both;
-  -moz-animation-fill-mode: both;
-  animation-fill-mode: both;
+  -webkit-animation-fill-mode: backwards;
+  -moz-animation-fill-mode: backwards;
+  animation-fill-mode: backwards;
+}
+
+.header {
+  text-align: center;
+  .desktop & {
+    transform-origin: center top;
+    -webkit-animation: fold-down 2.3s ease-in-out 1s 1;
+    -moz-animation: fold-down 2.3s ease-in-out 1s 1;
+    animation: fold-down 2.3s ease-in-out 1s 1;
+    -webkit-animation-fill-mode: backwards;
+    -moz-animation-fill-mode: backwards;
+    animation-fill-mode: backwards;
+  }
 }
 
 .footer {
