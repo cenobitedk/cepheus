@@ -3,6 +3,7 @@
           <li class="dropdown">
             <a href="#">Releases</a>
             <ul class="menu">
+              <li><a href="/view/rigelaxiom-ep.html" class="ajax">The Rigel Axiom</a></li>
               <li><a href="/view/aeternus.html" class="ajax">Aeternus</a></li>
               <li><a href="/view/throttle-up-ep.html" class="ajax">Throttle Up</a></li>
               <li><a href="/view/flashbacks-ep.html" class="ajax">Flashbacks</a></li>
