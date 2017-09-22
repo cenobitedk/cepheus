@@ -20,6 +20,6 @@
               <li><a href="https://twitter.com/dynatronsynth">Twitter</a></li>
             </ul>
           </li>
-          <li><a href="/press" class="">Press</a></li>
+          <!-- <li><a href="/press" class="">Press</a></li> -->
           <li><a href="#" class="mute">Mute</a></li>
         </ul>
