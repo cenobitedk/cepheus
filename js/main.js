@@ -1,9 +1,8 @@
-
+var picturefill = window.picturefill;
 var mobile = (document.querySelector('body.desktop') === null);
 var mutebtn = document.querySelector('a.mute');
 var YT = window.YT, player, done = false;
 var SC = window.SC, SCwidget = null;
-var picturefill = window.picturefill;
 
 /**
  * UTILITIES
@@ -99,7 +98,9 @@ function onYouTubeIframeAPIReady () {
   player = new YT.Player('player', {
     events: {
       'onReady': function (event) {
-        event.target.playVideo();
+        //event.target.playVideo();
+        player.playVideo();
+        toggleMute(undefined, true);
       },
       'onStateChange': function (event) {
         if (event.data === YT.PlayerState.ENDED) {
@@ -265,6 +266,9 @@ document.querySelector('.body').addEventListener("DOMNodeInserted", function (ev
 
 // Preload images for subsequent faster pageloads.
 document.preloadImages = [
+  { "url": "/img/rigelaxiom-ep-cover-thumb.jpg" },
+  { "url": "/img/rigelaxiom-ep-cover-banner.jpg" },
+  { "url": "/img/rigelaxiom-ep-cover-medium.jpg" },
   { "url": "/img/aeternus-cover-thumb.jpg" },
   { "url": "/img/aeternus-cover-banner.jpg" },
   { "url": "/img/aeternus-cover-medium.jpg" },
@@ -296,3 +300,5 @@ setTimeout(function() {
     }
   }
 }, preloadDelay);
+
+picturefill();
