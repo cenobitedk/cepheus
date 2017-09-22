@@ -99,9 +99,14 @@
     }
 
     &:hover .menu,
-    > a:focus + .menu {
+    &:active .menu,
+    > a:focus + .menu,
+    > a:active + .menu {
       opacity: 1;
 
+      .mobile & {
+        height: auto;
+      }
 
       li {
         opacity: 1;
@@ -139,6 +144,7 @@
 
     .mobile & {
       top: calc(100% + 5px);
+      height: 0;
     }
 
     li {

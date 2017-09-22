@@ -578,12 +578,23 @@ h1 a {
 }
 
 .nav .dropdown:hover .menu,
-.nav .dropdown > a:focus + .menu {
+.nav .dropdown:active .menu,
+.nav .dropdown > a:focus + .menu,
+.nav .dropdown > a:active + .menu {
   opacity: 1;
 }
 
+.mobile .nav .dropdown:hover .menu, .mobile
+.nav .dropdown:active .menu, .mobile
+.nav .dropdown > a:focus + .menu, .mobile
+.nav .dropdown > a:active + .menu {
+  height: auto;
+}
+
 .nav .dropdown:hover .menu li,
-.nav .dropdown > a:focus + .menu li {
+.nav .dropdown:active .menu li,
+.nav .dropdown > a:focus + .menu li,
+.nav .dropdown > a:active + .menu li {
   opacity: 1;
   margin-top: 0;
 }
@@ -619,6 +630,7 @@ h1 a {
 
 .mobile .nav .menu {
   top: calc(100% + 5px);
+  height: 0;
 }
 
 .nav .menu li {
