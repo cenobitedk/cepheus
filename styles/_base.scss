@@ -90,14 +90,16 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 .header {
-  transform-origin: center top;
-  -webkit-animation: fold-down 2.3s ease-in-out 1s 1;
-  -moz-animation: fold-down 2.3s ease-in-out 1s 1;
-  animation: fold-down 2.3s ease-in-out 1s 1;
-  -webkit-animation-fill-mode: backwards;
-  -moz-animation-fill-mode: backwards;
-  animation-fill-mode: backwards;
   text-align: center;
+  .desktop & {
+    transform-origin: center top;
+    -webkit-animation: fold-down 2.3s ease-in-out 1s 1;
+    -moz-animation: fold-down 2.3s ease-in-out 1s 1;
+    animation: fold-down 2.3s ease-in-out 1s 1;
+    -webkit-animation-fill-mode: backwards;
+    -moz-animation-fill-mode: backwards;
+    animation-fill-mode: backwards;
+  }
 }
 
 .footer {
