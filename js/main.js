@@ -266,6 +266,14 @@ document.querySelector('.body').addEventListener("DOMNodeInserted", function (ev
 
 // Preload images for subsequent faster pageloads.
 document.preloadImages = [
+  { "url": "/img/legacy-vol-i-cover-thumb.jpg" },
+  { "url": "/img/legacy-vol-i-cover-thumb.jpg" },
+  { "url": "/img/legacy-vol-i-cover-medium.jpg" },
+  { "url": "/img/legacy-vol-i-cover-large.jpg" },
+  { "url": "/img/legacy-vol-ii-cover-thumb.jpg" },
+  { "url": "/img/legacy-vol-ii-cover-thumb.jpg" },
+  { "url": "/img/legacy-vol-ii-cover-medium.jpg" },
+  { "url": "/img/legacy-vol-ii-cover-large.jpg" },
   { "url": "/img/rigelaxiom-ep-cover-thumb.jpg" },
   { "url": "/img/rigelaxiom-ep-cover-banner.jpg" },
   { "url": "/img/rigelaxiom-ep-cover-medium.jpg" },
