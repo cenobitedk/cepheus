@@ -250,7 +250,10 @@ document.addEventListener('click', function(e) {
     var n = e.target.parentNode;
     n.parentNode.removeChild(n);
     loaded = null;
-    toggleMute(document.querySelector('a.mute'), false);
+    if (SClastEvent === 'play' || SClastEvent === 'seek') {
+      toggleMute(document.querySelector('a.mute'), mutestate_previous);
+      SClastEvent = 'pause';
+    }
   }
 });
 
