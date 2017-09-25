@@ -1105,6 +1105,10 @@ h1 a {
   display: none;
 }
 
+.about p + h3 {
+  margin-top: 1em;
+}
+
 .about li {
   text-align: left;
   list-style-type: none;
