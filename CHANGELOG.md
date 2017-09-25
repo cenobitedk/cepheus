@@ -1,5 +1,14 @@
 #CHANGELOG
 
+## [1.10.0](https://github.com/cenobitedk/cepheus/releases/tag/v1.10.0) - 2017-09-25
+- `Change` Update menu. Structure and position changed.
+- `Change` Mute default.
+- `Added` Releases Rigel Axiom EP + Legacy Collection vol. I + II.
+- `Change` Disabled toggle album cover size. One size fits all.
+- `Change` Mobile => Desktop redirect added (reverse already working).
+- `Change` Updated about section.
+- `Added` `app.json`, prepare for Heroku.
+
 ## [1.9.0](https://github.com/cenobitedk/cepheus/releases/tag/v1.9.0) - 2016-02-19
 - `Added` missing metadata for mobile.
 
