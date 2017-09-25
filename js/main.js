@@ -1,6 +1,8 @@
 var picturefill = window.picturefill;
 var mobile = (document.querySelector('body.desktop') === null);
 var mutebtn = document.querySelector('a.mute');
+var mutestate = true;
+var mutestate_previous;
 var YT = window.YT, player, done = false;
 var SC = window.SC, SCwidget = null;
 
@@ -58,6 +60,7 @@ function toggleMute (el, force) {
   if (typeof el === 'undefined') {
     el = mutebtn;
   }
+  mutestate_previous = player.isMuted();
   if (typeof force === 'undefined') {
     force = !player.isMuted();
   }
@@ -75,6 +78,7 @@ function toggleMute (el, force) {
     player.mute();
     toggleClass(el, 'active', true);
   }
+  mutestate = player.isMuted();
   return force;
 }
 
@@ -100,7 +104,7 @@ function onYouTubeIframeAPIReady () {
       'onReady': function (event) {
         //event.target.playVideo();
         player.playVideo();
-        toggleMute(undefined, true);
+        toggleMute(undefined, mutestate);
       },
       'onStateChange': function (event) {
         if (event.data === YT.PlayerState.ENDED) {
@@ -201,13 +205,13 @@ function attachSC (el) {
       SClastEvent = 'play';
     });
     SCwidget.bind(SC.Widget.Events.PAUSE, function() {
-      toggleMute(mutebtn, false);
+      toggleMute(mutebtn, mutestate_previous);
       clearInterval(timer);
       unMarkPlayingTrack();
       SClastEvent = 'pause';
     });
     SCwidget.bind(SC.Widget.Events.FINISH, function() {
-      toggleMute(mutebtn, false);
+      toggleMute(mutebtn, mutestate_previous);
       clearInterval(timer);
       unMarkPlayingTrack();
       SClastEvent = 'finish';
