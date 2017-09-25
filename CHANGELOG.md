@@ -1,5 +1,8 @@
 #CHANGELOG
 
+## [1.10.1](https://github.com/cenobitedk/cepheus/releases/tag/v1.10.1) - 2017-09-25
+- `Fixed` Avoid close button to unmute when not wanted.
+
 ## [1.10.0](https://github.com/cenobitedk/cepheus/releases/tag/v1.10.0) - 2017-09-25
 - `Change` Update menu. Structure and position changed.
 - `Change` Mute default.
