@@ -1,5 +1,8 @@
 #CHANGELOG
 
+## [1.11.0](https://github.com/cenobitedk/cepheus/releases/tag/v1.11.0) - 2018-04-04
+- `Change` Redirect requests to HTTPS.
+
 ## [1.10.1](https://github.com/cenobitedk/cepheus/releases/tag/v1.10.1) - 2017-09-25
 - `Fixed` Avoid close button to unmute when not wanted.
 
