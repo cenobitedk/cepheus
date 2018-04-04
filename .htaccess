@@ -1,3 +1,12 @@
+RewriteEngine On
+RewriteCond %{HTTP_HOST} !=localhost
+RewriteCond %{HTTP_HOST} !=127.0.0.1
+RewriteCond %{REMOTE_ADDR} !=127.0.0.1
+RewriteCond %{REMOTE_ADDR} !=::1
+RewriteCond %{HTTP_HOST} !^beta\.
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [QSA,L,R=301]
+
 # BEGIN GZIP
 <ifmodule mod_deflate.c>
   AddOutputFilterByType DEFLATE text/text text/html text/plain text/xml text/css font/ttf font/otf font/opentype application/x-font application/x-font-opentype application/x-font-otf application/x-font-truetype application/x-font-ttf application/x-javascript application/javascript
