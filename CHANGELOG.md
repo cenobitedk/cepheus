@@ -1,5 +1,8 @@
 #CHANGELOG
 
+## [1.11.2](https://github.com/cenobitedk/cepheus/releases/tag/v1.11.2) - 2018-04-05
+- `Fixed` Redirect rules for Heroku.
+
 ## [1.11.1](https://github.com/cenobitedk/cepheus/releases/tag/v1.11.1) - 2018-04-05
 - `Fixed` Redirect rules and hardcoded HTTP embeds.
 
