@@ -1,5 +1,8 @@
 #CHANGELOG
 
+## [1.11.1](https://github.com/cenobitedk/cepheus/releases/tag/v1.11.1) - 2018-04-05
+- `Fixed` Redirect rules and hardcoded HTTP embeds.
+
 ## [1.11.0](https://github.com/cenobitedk/cepheus/releases/tag/v1.11.0) - 2018-04-04
 - `Change` Redirect requests to HTTPS.
 
